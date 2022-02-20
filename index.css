@@ -7,13 +7,6 @@ body {
     padding: 0;
 }
 
-header {
-    background: red;
-    max-width: 75%;
-    margin-right: auto;
-    margin-left: auto;
-}
-
 main {
     background: green;
     text-align: center;
