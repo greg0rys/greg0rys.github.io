@@ -1,4 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
 header {
     text-align: center;
     background: red;
+}
+
+main {
+    background: green;
+    text-align: center;
+    padding-top: 1px;
+}
+
+.nav>li {
+    display: inline;
+    list-style-type: none;
+    padding: 2.5px;
+}
+
+.nav>li>a {
+    color: goldenrod;
+}
+
+.nav>li>a:hover {
+    color: black;
+    font-family: monospace;
+    font-style: italic;
 }
