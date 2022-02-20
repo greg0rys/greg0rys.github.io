@@ -28,3 +28,8 @@ main {
     font-family: monospace;
     font-style: italic;
 }
+
+.btn-group {
+    border: 1px solid black;
+    padding: 2px;
+}

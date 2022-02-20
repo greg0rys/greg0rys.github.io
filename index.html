@@ -12,24 +12,41 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./index.css" />
-    <script src="./index.js"></script>
+
 </head>
 
 <body>
+    <script src="./index.js"></script>
     <div class="container-fluid">
         <header class="row">
             <div class="col">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark">
                     <div class="container-fluid">
                         <p class="navbar-brand">Greg0rys</p>
-                    </div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                </li>
+                        </div>
                 </nav>
-            </div>
+                </div>
         </header>
 
         <main class="row">
             <div class="col">
-                <p>column 1</p>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger">Home</button>
+                    <button type="button" class="btn btn-danger">Github</button>
+                    <button id="back" type="button" class="btn btn-danger">Back</button>
+                </div>
+
             </div>
             <div class="col">
                 <p>column 1</p>
@@ -38,7 +55,7 @@
                 <p>column 1</p>
             </div>
         </main>
-    </div>
+        </div>
 </body>
 
 </html>
