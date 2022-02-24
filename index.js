@@ -1,4 +1,4 @@
-var clock = document.querySelector("span#clock");
+clock = document.getElementById("span#clock");
 
 function getCurrentTime() {
     const currentTime = new Date();
