@@ -7,41 +7,21 @@ body {
     padding: 0;
 }
 
-main {
-    background: green;
+.col {
+    background: grey;
+    color: ghostwhite;
+}
+
+footer.row {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     text-align: center;
-    padding-top: 1px;
-}
-
-.nav>li {
-    display: inline;
-    list-style-type: none;
-    padding: 2.5px;
-}
-
-.nav>li>a {
-    color: goldenrod;
-}
-
-.nav>li>a:hover {
-    color: black;
     font-family: monospace;
     font-style: italic;
 }
 
-.btn-group {
-    border: 1px solid black;
-    padding: 2px;
-}
-
-main>.row {
-    max-width: 100%;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    height: 25px;
-    width: 100%;
-    text-align: center;
+#clock {
+    display: block;
+    color: burlywood;
 }
