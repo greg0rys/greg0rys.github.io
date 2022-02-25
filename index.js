@@ -18,4 +18,27 @@ function checkHours(i) {
     return i > 12 ? i - 12 : i;
 }
 
-window.addEventListener("DOMContentLoaded", getCurrentTime, true);
+function styleFooter() {
+    var footer = document.querySelector("#footContent");
+    footer.style.background = " rebeccapurple";
+    footer.style.color = "red";
+    footer.style.fontSize = "20px";
+    footer.innerHTML += " " + new Date().getFullYear() + "&copy;";
+}
+
+// once the DOM has loaded call the helpers
+window.addEventListener("DOMContentLoaded", function() {
+    var homebtn = document.querySelector("button#home");
+    var ghbtn = document.querySelector("button#GH");
+    var blogsbtn = document.querySelector("button#blogs");
+
+    homebtn.addEventListener("click", () => {
+        window.location.reload();
+    });
+    ghbtn.addEventListener("click", () => {
+        window.location.href = "https://www.github.com/greg0rys";
+    });
+
+    getCurrentTime();
+    styleFooter();
+});
