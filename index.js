@@ -21,4 +21,4 @@ function checkHours(i) {
 }
 
 // check if the seconds needs a 0 appended in front of it
-getCurrentTime();
+clock.innerHTML = getCurrentTime();
