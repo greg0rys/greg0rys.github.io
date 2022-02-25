@@ -11,11 +11,11 @@ function getCurrentTime() {
 }
 
 function checkTime(i) {
-    return i < 10 ? (i += "0" + i) : i;
+    return i < 10 ? (i = "0" + i) : i;
 }
 
 function checkHours(i) {
     return i > 12 ? i - 12 : i;
 }
 
-getCurrentTime();
+window.addEventListener("DOMContentLoaded", getCurrentTime, true);
