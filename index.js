@@ -28,16 +28,28 @@ function styleFooter() {
 
 // once the DOM has loaded call the helpers
 window.addEventListener("DOMContentLoaded", function() {
+    // grab the btn groups btns
     var homebtn = document.querySelector("button#home");
     var ghbtn = document.querySelector("button#GH");
-    var blogsbtn = document.querySelector("button#blogs");
+    var smplepg = document.querySelector("button#nextPage");
 
     homebtn.addEventListener("click", () => {
-        window.location.reload();
+        if (window.location.href == "./index.html") {
+            window.location.reload();
+        } else {
+            window.location.href = "./index.html";
+        }
     });
     ghbtn.addEventListener("click", () => {
         window.location.href = "https://www.github.com/greg0rys";
     });
+    smplepg.addEventListener(
+        "click",
+        () => {
+            window.location.href = "./nextpage.html";
+        },
+        true
+    );
 
     getCurrentTime();
     styleFooter();
