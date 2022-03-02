@@ -41,7 +41,7 @@ window.addEventListener("DOMContentLoaded", function() {
         }
     });
     ghbtn.addEventListener("click", () => {
-        window.location.href = "https://www.github.com/greg0rys";
+        window.open("https://www.github.com/greg0rys", '_blank');
     });
     smplepg.addEventListener(
         "click",
