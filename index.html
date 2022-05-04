@@ -57,7 +57,17 @@
             <div id="footContent" class="col">GREG <span id="clock"></span></div>
         </footer>
     </div>
-<div>    <iframe src="https://github.com/greg0rys/greg0rys.github.io" width = "100%"></iframe>
-</div>
+
+
+    <iframe id="github-iframe" src=""></iframe>
+    <script>
+        fetch('https://api.github.com/repos/greg0rys/greg0rys.github.io')
+            .then(function(response) {
+                return response.json();
+            }).then(function(data) {
+            var iframe = document.getElementById('github-iframe');
+            iframe.src = 'data:text/html;base64,' + encodeURIComponent(data['content']);
+        });
+    </script>
     <script src="./scripts/index.js"></script>
 </body>
