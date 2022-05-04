@@ -1,0 +1,31 @@
+body {
+    background-image: url("../imgs/404bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+    ". top ."
+    ". main ."
+    "footer . .";
+    background: yellow;
+    width: 70%;
+    align-content: center;
+}
+
+.container > header {
+    grid-area: top;
+}
+
+.container > main {
+    grid-area: main;
+}
+
+.container > footer {
+    grid-area: footer;
+}
+
