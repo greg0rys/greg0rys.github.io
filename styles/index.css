@@ -66,7 +66,7 @@ label{
     font-family: monospace;
     font-style: italic;
     background: linear-gradient(4deg, black,black, darkseagreen,black);
-    width: min-content;
+    width: fit-content;
 }
 
 #loginCaption:hover {
@@ -74,7 +74,7 @@ label{
 }
 
 #loginCaption::after{
-    content: ": ";
+    content: "🔐";
 }
 
 
