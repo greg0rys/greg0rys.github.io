@@ -53,4 +53,73 @@ window.addEventListener("DOMContentLoaded", function() {
 
     getCurrentTime();
     styleFooter();
+
+    var submit = document.querySelector("#addComments");
+    var text_to_email;
+    var txtF = document.querySelector("textarea");
+
+    var textField = document.createElement("textarea");
+    textField.setAttribute("id", "textInput");
+    submit.addEventListener("click", evt => {
+        textField.innerText = "Any comments you'd like to add?";
+        var table = document.querySelector("#textArea");
+        table.append(textField);
+
+    }, {once:true}); // pass in the once option so this textField can only be added
+    // a max of one time no matter how many times the submit button is pushed.
+
+    var textF = document.querySelector("#textArea");
+    textF.addEventListener("click", e=>{
+        var txtF = document.querySelector("textarea");
+        txtF.innerText = " ";
+    } );
+
+    // when the mouse leaves the textarea, it shall be removed.
+    //TODO: I want to be able to grab the value that the user enters and echo it back for now.
+    textF.addEventListener("mouseleave", ()=>{
+        text_to_email = textF.innerText;
+        alert(text_to_email);
+        textF.innerHTML = " ";
+
+    })
+
+
+    function go(evt) {
+        y = 0;
+        if(y === 0){
+        }else{
+        }
+        y++;
+        return addEventListener('click', go(this));
+
+    }
+
+
+
+
+
+
+    var x = 0
+
+    /*
+    * attach a click event to the loginCaption. If the caption hasn't been clicked yet
+    * then x will = 0 and fire the slideup event
+    * and then set x to 1 this way upon the next click event it will fire the slideDown event
+    *
+    * */
+    $('#loginCaption').click(evt =>{
+        if(x === 0){
+            $('td').slideUp('fast');
+            x = 1;
+        } else {
+            $('td').slideDown('fast');
+            x = 0;
+        }
+    })
+
+
+
+
+
+
 });
