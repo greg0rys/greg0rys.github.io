@@ -46,9 +46,7 @@ table{
     grid-area: form;
 }
 
-#grid{
-    background: orange;
-}
+
 label{
     width: fit-content;
     font-size: 15px;

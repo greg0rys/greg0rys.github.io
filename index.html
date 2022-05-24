@@ -7,11 +7,6 @@
     <meta name="description" content="things that I want to cry about but dont">
     <title>greg0nline</title>
 
-    <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!--    link our built tailwind css file as the stylesheet-->
     <link rel="stylesheet" href="./styles/output.css"/>
 
@@ -20,42 +15,52 @@
 
 <body>
 
-<header class="grid grid-cols-6 grid-rows-6 bg-yellow-300">
+<section>
+    a quick note unless we have tailwindcss watching our output file while in dev, we won't see newly applied styles.
+</section>
+
+<header class=" grid grid-cols-6 grid-rows-6 bg-green-200">
 <!--    make this column span all rows and 1 column acts as 'sidebar'-->
     <div class="col-start-1 col-end-1 row-start-1 row-span-6 bg-red-300">
 
-        <p>I've got my head out the sunroof, only one thing on my mind..</p>
+        <p>Ice out that little watch with some rocks or something.</p>
     </div>
 <!--    let this column start next to the sidebar and span all columns and span only its row-->
     <div  class="col-start-2 col-span-7 row-start-1 row-end-2 bg-red-200
 px-1">
         <p>I've got my head out the sunroof, only one thing on my mind..</p>
     </div>
-    <div  class="col-start-3  col-span-4 row-start-3 row-end-3">
+    <div  class="col-start-2  col-span-4 row-start-2 row-end-3 bg-black-300">
         <p>{possible blog area}</p>
     </div>
-    <div class="col-start-4 col-end-4 row-start-4 row-end-4">
+    <div class="col-start-3 col-end-5 row-start-3 row-end-4 bg-black-200">
         <p>I've got my head out the sunroof, only one thing on my mind..</p>
     </div>
-    <div class="col-start-5 col-end-5 row-start-5 row-end-5">
+    <div class="col-start-2 col-end-5 row-start-5 row-end-5">
         <p>I've got my head out the sunroof, only one thing on my mind..</p>
     </div>
-    <div class="col-start-6 col-end-7 row-start-6 row-end-6">
+<!--    start this on the second column, span all columns of the header, starting and ending on the last row-->
+    <div class="col-start-2 col-span-7 row-start-6 row-end-6 bg-pink-100">
         <p>may = harsh.</p>
     </div>
 
 </header>
 
-<main class="grid grid-cols-4 grid-rows-4 mx-auto">
-    <div>
-        I know, you want more content..
+<main class="grid grid-cols-4 grid-rows-4 text-center">
+    <div class="col-start-1 col-end-1 row-span-4 bg-green-500">
+        <p>I know, you want more content..</p>
     </div>
+<!--    by adjusting the # of cols and rows we can change the height of an area. here we have these two -->
+<!--    elements span all rows! so it adjusts the height of the area for fitting just these two rows-->
+    <div class="col-start-2 col-span-4 row-start-1 row-span-4 bg-orange-300">
+        <p>this could be the navigation..</p>
+    </div>
+
 </main>
 
-<footer class='flex justify-content-center'>
-    <div class="flex-none">
-        <p>Greg
-        </p>
+<footer class='flex align-content-center absolute bottom-0'>
+    <div class="flex-1">
+        <p class="justify-content-center">Had to dash on 'em like dang baby I'm Stacey</p>
     </div>
 </footer>
 
