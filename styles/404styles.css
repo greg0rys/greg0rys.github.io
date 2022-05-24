@@ -4,28 +4,14 @@ body {
     background-size: cover;
 }
 
-.container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    grid-template-areas:
-    ". top ."
-    ". main ."
-    "footer . .";
-    background: yellow;
-    width: 70%;
-    align-content: center;
+
+
+/*style the table element on this page?*/
+
+.table {
+    text-align: center;
+    width: fit-content;
+    margin: auto;
 }
 
-.container > header {
-    grid-area: top;
-}
-
-.container > main {
-    grid-area: main;
-}
-
-.container > footer {
-    grid-area: footer;
-}
-
+/*style the subelements of a table*/

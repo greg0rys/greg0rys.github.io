@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", function() {
     var smplepg = document.querySelector("button#nextPage");
 
     homebtn.addEventListener("click", () => {
-        if (window.location.href == "./index.html") {
+        if (window.location.href === "./index.html") {
             window.location.reload();
         } else {
             window.location.href = "../index.html";
@@ -46,9 +46,9 @@ window.addEventListener("DOMContentLoaded", function() {
     smplepg.addEventListener(
         "click",
         () => {
-            window.location.href = "./nextpage.html";
+            window.location.href = "./nextpage.html"; // this should take you to the 404 page, as this page doesn't exist.
         },
-        true
+        true // make sure this event is captured.
     );
 
     getCurrentTime();
@@ -68,38 +68,30 @@ window.addEventListener("DOMContentLoaded", function() {
     }, {once:true}); // pass in the once option so this textField can only be added
     // a max of one time no matter how many times the submit button is pushed.
 
-    var textF = document.querySelector("#textArea");
-    textF.addEventListener("click", e=>{
-        var txtF = document.querySelector("textarea");
-        txtF.innerText = " ";
-    } );
-
-    // when the mouse leaves the textarea, it shall be removed.
-    //TODO: I want to be able to grab the value that the user enters and echo it back for now.
-    textF.addEventListener("mouseleave", ()=>{
-        text_to_email = textF.innerText;
-        alert(text_to_email);
-        textF.innerHTML = " ";
-
-    })
+    /* we need these methods that we commented out below do not delete */
+     // var textF = document.querySelector("#textArea");
+     // textF.addEventListener("click", e=>{
+     //     var txtF = document.querySelector("textarea");
+     //     txtF.innerText = " ";
+     // } );
 
 
-    function go(evt) {
-        y = 0;
-        if(y === 0){
-        }else{
-        }
-        y++;
-        return addEventListener('click', go(this));
-
-    }
+    //
+    // // when the mouse leaves the textarea, it shall be removed.
+    // //TODO: I want to be able to grab the value that the user enters and echo it back for now.
+    // textF.addEventListener("mouseleave", ()=>{
+    //     text_to_email = textF.innerText;
+    //     alert(text_to_email);
+    //     textF.innerHTML = " ";
+    //
+    // })
 
 
 
 
 
 
-    var x = 0
+
 
     /*
     * attach a click event to the loginCaption. If the caption hasn't been clicked yet
@@ -107,6 +99,7 @@ window.addEventListener("DOMContentLoaded", function() {
     * and then set x to 1 this way upon the next click event it will fire the slideDown event
     *
     * */
+    var x = 0 // the counter this function will use.
     $('#loginCaption').click(evt =>{
         if(x === 0){
             $('td').slideUp('fast');
@@ -123,3 +116,5 @@ window.addEventListener("DOMContentLoaded", function() {
 
 
 });
+
+

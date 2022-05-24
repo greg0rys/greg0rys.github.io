@@ -11,68 +11,39 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="./styles/index.css"/>
+    <!--    link our built tailwind css file as the stylesheet-->
+    <link rel="stylesheet" href="./styles/output.css"/>
+
 
 </head>
 
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <img src="./imgs/Greg.gif" alt="logo"/>
-        </div>
-        <div class="col"></div>
-        <div class="col">
-            <div class="btn-group mt-3 mb-0" role="group" aria-label="Navigation">
-                <button id="home" type="button" class="btn btn-secondary">
-                    Home
-                </button>
-                <button id="GH" type="button" class="btn btn-secondary">
-                    GitHub
-                </button>
-                <button id="nextPage" type="button" class="btn btn-secondary">
-                    Sample Page
-                </button>
-            </div>
-        </div>
+
+<header class="grid grid-cols-6 grid-rows-6 bg-yellow-300">
+    <div class="col-start-1 col-end-1 row-start-1 row-span-6 bg-red-300">
+
+        <p>I've got my head out the sunroof, only one thing on my mind..</p>
+    </div>
+    <div  class="col-start-2 col-span-7 row-start-1 row-end-2 bg-red-200
+px-1">
+        <p>I've got my head out the sunroof, only one thing on my mind..</p>
+    </div>
+    <div  class="col-start-3  col-span-4 row-start-3 row-end-3">
+        <p>I've got my head out the sunroof, only one thing on my mind..</p>
+    </div>
+    <div class="col-start-4 col-end-4 row-start-4 row-end-4">
+        <p>I've got my head out the sunroof, only one thing on my mind..</p>
+    </div>
+    <div class="col-start-5 col-end-5 row-start-5 row-end-5">
+        <p>I've got my head out the sunroof, only one thing on my mind..</p>
+    </div>
+    <div class="col-start-6 col-end-7 row-start-6 row-end-6">
+        <p>I've got my head out the sunroof, only one thing on my mind..</p>
     </div>
 
-<div class="form">
-    <table>
-        <tr>
-            <td><label for ="first_name">First Name: </label></td>
-            <td><input type = "text" name = "first_name" id="first_name"></td>
-            <td><label for="email">Email: </label></td>
-            <td><input type="email" id="email"></td>
-            <td><input id="addComments" type="submit"></td>
-            <td id ="textArea"></td>
-        </tr>
+</header>
 
-        <tr>
-            <script>
-                let tr = document.createElement("P");
-                // tr.innerHTML += "<b>hello!</b>";
-                // tr.style.display = 'inline'; // don't give it a new block treat it as text within a line for no margin.
-                var table = document.querySelector('table');
-                table.innerHTML += "<caption id='loginCaption'>Login</caption>";
-                table.style.border= "1px solid white";
-                table.style.captionSide = 'top';
-                table.style.display = 'table';
-                var form = document.querySelector(".form");
-                form.style.marginTop = '2pc';
-                form.style.float = 'left';
-                form.style.zIndex = '-1';
-                table.append(tr);
-            </script>
-        </tr>
-    </table>
-</div>
-    </div>
-    <footer class="row">
-        <div id="footContent" class="col">GREG <span id="clock"></span></div>
-    </footer>
-</div>
-
+<main class="grid grid-cols-4 grid-rows-4"></main>
 
 <script src="./scripts/index.js"></script>
 <script
