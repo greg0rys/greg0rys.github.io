@@ -26,6 +26,8 @@ function styleFooter() {
     footer.innerHTML += " " + new Date().getFullYear() + "&copy;";
 }
 
+
+
 // once the DOM has loaded call the helpers
 window.addEventListener("DOMContentLoaded", function() {
     // grab the btn groups btns
@@ -117,4 +119,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
 });
 
-
+let x = document.body.children[0];
+x.forEach(elm=>{
+    elm.style.color = 'red';
+})

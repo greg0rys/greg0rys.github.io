@@ -4,6 +4,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="things that I want to cry about but dont">
     <title>greg0nline</title>
 
     <!-- Latest compiled and minified CSS -->
@@ -20,16 +21,18 @@
 <body>
 
 <header class="grid grid-cols-6 grid-rows-6 bg-yellow-300">
+<!--    make this column span all rows and 1 column acts as 'sidebar'-->
     <div class="col-start-1 col-end-1 row-start-1 row-span-6 bg-red-300">
 
         <p>I've got my head out the sunroof, only one thing on my mind..</p>
     </div>
+<!--    let this column start next to the sidebar and span all columns and span only its row-->
     <div  class="col-start-2 col-span-7 row-start-1 row-end-2 bg-red-200
 px-1">
         <p>I've got my head out the sunroof, only one thing on my mind..</p>
     </div>
     <div  class="col-start-3  col-span-4 row-start-3 row-end-3">
-        <p>I've got my head out the sunroof, only one thing on my mind..</p>
+        <p>{possible blog area}</p>
     </div>
     <div class="col-start-4 col-end-4 row-start-4 row-end-4">
         <p>I've got my head out the sunroof, only one thing on my mind..</p>
@@ -38,16 +41,23 @@ px-1">
         <p>I've got my head out the sunroof, only one thing on my mind..</p>
     </div>
     <div class="col-start-6 col-end-7 row-start-6 row-end-6">
-        <p>I've got my head out the sunroof, only one thing on my mind..</p>
+        <p>may = harsh.</p>
     </div>
 
 </header>
 
-<main class="grid grid-cols-4 grid-rows-4"></main>
+<main class="grid grid-cols-4 grid-rows-4 mx-auto">
+    <div>
+        I know, you want more content..
+    </div>
+</main>
+
+<footer class='flex justify-content-center'>
+    <div class="flex-none">
+        <p>Greg
+        </p>
+    </div>
+</footer>
 
 <script src="./scripts/index.js"></script>
-<script
-        src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-        crossorigin="anonymous"></script>
 </body>
