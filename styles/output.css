@@ -546,20 +546,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-column-start: 2;
 }
 
-.col-start-3 {
-  grid-column-start: 3;
-}
-
 .col-end-5 {
   grid-column-end: 5;
 }
 
 .col-end-1 {
   grid-column-end: 1;
-}
-
-.col-end-3 {
-  grid-column-end: 3;
 }
 
 .row-span-6 {
@@ -615,24 +607,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: auto;
 }
 
-.flex {
-  display: flex;
-}
-
 .table {
   display: table;
 }
 
 .grid {
   display: grid;
-}
-
-.flex-1 {
-  flex: 1 1 0%;
-}
-
-.flex-none {
-  flex: none;
 }
 
 .grid-cols-6 {
@@ -643,12 +623,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .grid-rows-6 {
   grid-template-rows: repeat(6, minmax(0, 1fr));
 }
 
 .grid-rows-4 {
   grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
 }
 
 .content-center {
