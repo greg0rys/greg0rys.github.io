@@ -631,6 +631,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: center;
 }
 
+.overflow-auto {
+  overflow: auto;
+}
+
 .bg-green-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(187 247 208 / var(--tw-bg-opacity));
@@ -775,6 +779,18 @@ label:hover{
 
 #loginCaption::after{
   content: "🔐";
+}
+
+@media (min-width: 640px) {
+  .sm\:col-start-3 {
+    grid-column-start: 3;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:col-start-3 {
+    grid-column-start: 3;
+  }
 }
 
 
