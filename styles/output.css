@@ -506,6 +506,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: fixed;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
 .col-span-7 {
   grid-column: span 7 / span 7;
 }
@@ -516,6 +528,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .col-span-6 {
   grid-column: span 6 / span 6;
+}
+
+.col-span-3 {
+  grid-column: span 3 / span 3;
 }
 
 .col-start-1 {
@@ -530,6 +546,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-column-start: 3;
 }
 
+.col-start-4 {
+  grid-column-start: 4;
+}
+
+.col-start-5 {
+  grid-column-start: 5;
+}
+
 .col-end-2 {
   grid-column-end: 2;
 }
@@ -540,6 +564,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .col-end-1 {
   grid-column-end: 1;
+}
+
+.col-end-7 {
+  grid-column-end: 7;
+}
+
+.col-end-8 {
+  grid-column-end: 8;
 }
 
 .row-span-6 {
@@ -611,6 +643,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex: 1 1 0%;
 }
 
+.flex-auto {
+  flex: 1 1 auto;
+}
+
 .grid-cols-6 {
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
@@ -625,6 +661,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .grid-rows-4 {
   grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.content-center {
+  align-content: center;
 }
 
 .justify-center {
@@ -663,6 +703,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-orange-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(253 186 116 / var(--tw-bg-opacity));
+}
+
+.bg-yellow-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 224 71 / var(--tw-bg-opacity));
 }
 
 .p-0\.5 {

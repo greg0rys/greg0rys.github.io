@@ -17,26 +17,26 @@
 
 <header class=" grid grid-cols-6 grid-rows-6 bg-green-200">
 <!--    make this column span all rows and 1 column acts as 'sidebar'-->
-    <div class="col-start-1 col-end-2 row-start-1 row-span-6 bg-red-300 p-0.5 sm: col-end-2">
+    <div class="col-start-1 col-span-3 row-start-1 row-span-6 bg-red-300 p-0.5 ">
 
         <p class="p-0.5 ">Ice out that little watch with some rocks or something.</p>
     </div>
 <!--    let this column start next to the sidebar and span all columns and span only its row-->
-    <div  class="col-start-2 col-span-7 row-start-1 row-end-2 bg-red-200
-px-1 sm:col-start-3">
+    <div  class="col-start-4 col-span-7 row-start-1 row-end-2 bg-red-200
+px-1">
         <p>I've got my head out the sunroof, only one thing on my mind..</p>
     </div>
-    <div  class="col-start-2  col-span-4 row-start-2 row-end-3 bg-black-300">
+    <div  class="col-start-4  col-span-4 row-start-2 row-end-3 bg-black-300">
         <p>{possible blog area}</p>
     </div>
-    <div class="col-start-3 col-end-5 row-start-3 row-end-4 bg-black-200">
+    <div class="col-start-5 col-end-5 row-start-3 row-end-4 bg-black-200">
         <p>I've got my head out the sunroof, only one thing on my mind..</p>
     </div>
-    <div class="col-start-2 col-end-5 row-start-5 row-end-5">
+    <div class="col-start-4 col-end-5 row-start-5 row-end-5">
         <p>I've got my head out the sunroof, only one thing on my mind..</p>
     </div>
 <!--    start this on the second column, span all columns of the header, starting and ending on the last row-->
-    <div class="col-start-2 col-span-7 row-start-6 row-end-6 bg-pink-100">
+    <div class="col-start-4 col-span-7 row-start-6 row-end-6 bg-pink-100">
         <p>may = harsh.</p>
     </div>
 
@@ -54,11 +54,14 @@ px-1 sm:col-start-3">
 
 </main>
 
-<footer class='flex justify-center fixed inset-x'>
-    <div class="flex-1">
-        <p class="justify-content-center">Had to dash on 'em like dang baby I'm Stacey</p>
-    </div>
-</footer>
+<div class="container mx-auto">
+    <footer class='flex  absolute bottom-0 left-30 right-30 bg-yellow-300'>
+        <div class="flex">
+            <p class="content-center">Had to dash on 'em like dang baby I'm Stacey</p>
+        </div>
+    </footer>
+
+</div>
 
 <script src="./scripts/index.js"></script>
 </body>
