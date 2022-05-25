@@ -506,20 +506,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: fixed;
 }
 
-.absolute {
-  position: absolute;
-}
-
-.top-0 {
-  top: 0px;
-}
-
 .bottom-0 {
   bottom: 0px;
 }
 
 .left-0 {
   left: 0px;
+}
+
+.col-span-3 {
+  grid-column: span 3 / span 3;
 }
 
 .col-span-7 {
@@ -530,28 +526,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-column: span 4 / span 4;
 }
 
-.col-span-6 {
-  grid-column: span 6 / span 6;
-}
-
-.col-span-3 {
-  grid-column: span 3 / span 3;
-}
-
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
 
 .col-start-1 {
   grid-column-start: 1;
-}
-
-.col-start-2 {
-  grid-column-start: 2;
-}
-
-.col-start-3 {
-  grid-column-start: 3;
 }
 
 .col-start-4 {
@@ -562,8 +542,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-column-start: 5;
 }
 
-.col-end-2 {
-  grid-column-end: 2;
+.col-start-2 {
+  grid-column-start: 2;
+}
+
+.col-start-3 {
+  grid-column-start: 3;
 }
 
 .col-end-5 {
@@ -574,12 +558,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-column-end: 1;
 }
 
-.col-end-7 {
-  grid-column-end: 7;
-}
-
-.col-end-8 {
-  grid-column-end: 8;
+.col-end-3 {
+  grid-column-end: 3;
 }
 
 .row-span-6 {
@@ -651,8 +631,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex: 1 1 0%;
 }
 
-.flex-auto {
-  flex: 1 1 auto;
+.flex-none {
+  flex: none;
 }
 
 .grid-cols-6 {
@@ -673,14 +653,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .content-center {
   align-content: center;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.overflow-auto {
-  overflow: auto;
 }
 
 .bg-green-200 {
@@ -832,18 +804,6 @@ label:hover{
 
 #loginCaption::after{
   content: "🔐";
-}
-
-@media (min-width: 640px) {
-  .sm\:col-start-3 {
-    grid-column-start: 3;
-  }
-}
-
-@media (min-width: 768px) {
-  .md\:col-start-3 {
-    grid-column-start: 3;
-  }
 }
 
 

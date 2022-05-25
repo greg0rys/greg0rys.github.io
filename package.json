@@ -1,0 +1,25 @@
+{
+  "name": "greg0rys.github.io",
+  "version": "2.0.0",
+  "description": "my personal website",
+  "main": "index.html",
+  "scripts": {
+    "test": "run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greg0rys/greg0rys.github.io.git"
+  },
+  "keywords": [
+    "personal",
+    "blog",
+    "website",
+    "portfolio"
+  ],
+  "author": "Greg S",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/greg0rys/greg0rys.github.io/issues"
+  },
+  "homepage": "https://github.com/greg0rys/greg0rys.github.io#readme"
+}
