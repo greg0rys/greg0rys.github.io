@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/greg0rys/greg0rys.github.io#readme",
   "dependencies": {
-    "daisyui": "^2.15.1"
+    "daisyui": "^2.15.1",
+    "tailwindcss": "^3.0.24"
   }
 }
