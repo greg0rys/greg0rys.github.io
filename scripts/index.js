@@ -1,6 +1,4 @@
-const { JSDOM } = require("jsdom");
-const { window } = new JSDOM("");
-const $ = require("jquery")(window);
+
 
 function getCurrentTime() {
     const currentTime = new Date();
@@ -32,46 +30,46 @@ function styleFooter() {
 
 
 
-// once the DOM has loaded call the helpers
-window.addEventListener("DOMContentLoaded", function() {
-    // grab the btn groups btns
-    var homebtn = document.querySelector("button#home");
-    var ghbtn = document.querySelector("button#GH");
-    var smplepg = document.querySelector("button#nextPage");
-
-    homebtn.addEventListener("click", () => {
-        if (window.location.href === "./index.html") {
-            window.location.reload();
-        } else {
-            window.location.href = "../index.html";
-        }
-    });
-    ghbtn.addEventListener("click", () => {
-        window.open("https://www.github.com/greg0rys", '_blank');
-    });
-    smplepg.addEventListener(
-        "click",
-        () => {
-            window.location.href = "./nextpage.html"; // this should take you to the 404 page, as this page doesn't exist.
-        },
-        true // make sure this event is captured.
-    );
-
-    getCurrentTime();
-    styleFooter();
-
-    var submit = document.querySelector("#addComments");
-    var text_to_email;
-    var txtF = document.querySelector("textarea");
-
-    var textField = document.createElement("textarea");
-    textField.setAttribute("id", "textInput");
-    submit.addEventListener("click", evt => {
-        textField.innerText = "Any comments you'd like to add?";
-        var table = document.querySelector("#textArea");
-        table.append(textField);
-
-    }, {once:true}); // pass in the once option so this textField can only be added
+// // once the DOM has loaded call the helpers
+// window.addEventListener("DOMContentLoaded", function() {
+//     // grab the btn groups btns
+//     var homebtn = document.querySelector("button#home");
+//     var ghbtn = document.querySelector("button#GH");
+//     var smplepg = document.querySelector("button#nextPage");
+//
+//     homebtn.addEventListener("click", () => {
+//         if (window.location.href === "./index.html") {
+//             window.location.reload();
+//         } else {
+//             window.location.href = "../index.html";
+//         }
+//     });
+//     ghbtn.addEventListener("click", () => {
+//         window.open("https://www.github.com/greg0rys", '_blank');
+//     });
+//     smplepg.addEventListener(
+//         "click",
+//         () => {
+//             window.location.href = "./nextpage.html"; // this should take you to the 404 page, as this page doesn't exist.
+//         },
+//         true // make sure this event is captured.
+//     );
+//
+//     getCurrentTime();
+//     styleFooter();
+//
+//     var submit = document.querySelector("#addComments");
+//     var text_to_email;
+//     var txtF = document.querySelector("textarea");
+//
+//     var textField = document.createElement("textarea");
+//     textField.setAttribute("id", "textInput");
+//     submit.addEventListener("click", evt => {
+//         textField.innerText = "Any comments you'd like to add?";
+//         var table = document.querySelector("#textArea");
+//         table.append(textField);
+//
+//     }, {once:true}); // pass in the once option so this textField can only be added
     // a max of one time no matter how many times the submit button is pushed.
 
     /* we need these methods that we commented out below do not delete */
@@ -105,27 +103,30 @@ window.addEventListener("DOMContentLoaded", function() {
     * and then set x to 1 this way upon the next click event it will fire the slideDown event
     *
     * */
-    var x = 0 // the counter this function will use.
-    $('#loginCaption').click(evt =>{
-        if(x === 0){
-            $('td').slideUp('fast');
-            x = 1;
-        } else {
-            $('td').slideDown('fast');
-            x = 0;
-        }
-    })
+    // var x = 0 // the counter this function will use.
+    // $('#loginCaption').click(evt =>{
+    //     if(x === 0){
+    //         $('td').slideUp('fast');
+    //         x = 1;
+    //     } else {
+    //         $('td').slideDown('fast');
+    //         x = 0;
+    //     }
+    // })
 
 
 
 
 
+//
+// });
+//
+// let x = document.body.children[0];
+// x.forEach(elm=>{
+//     elm.style.color = 'red';
+// })
 
-});
-
-let x = document.body.children[0];
-x.forEach(elm=>{
-    elm.style.color = 'red';
-})
-
-document.querySelector("#date").innerHTML = new Date().getFullYear();
+/*
+    temporary use of javascrip to supply current year, will reimplement the clock;
+ */
+document.querySelector("#date").innerHTML = new Date().getFullYear().toString() + ` &copy;`;

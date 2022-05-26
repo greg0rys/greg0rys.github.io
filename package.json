@@ -24,8 +24,5 @@
   "bugs": {
     "url": "https://github.com/greg0rys/greg0rys.github.io/issues"
   },
-  "homepage": "https://github.com/greg0rys/greg0rys.github.io#readme",
-  "dependencies": {
-    "jquery": "^3.6.0"
-  }
+  "homepage": "https://github.com/greg0rys/greg0rys.github.io#readme"
 }
