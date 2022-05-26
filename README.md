@@ -2,16 +2,10 @@
 
 ---
 
+🍇 This is my personal website repo. 
 
+This site is built with 💌 by @greg0rys 
 
+🔦 by HTML, CSS, Javascript, Node, and Tailwindcss.
 
-```javascript
-let x = document.querySelectorAll('#styleDiv');
-
-x.forEach((elm) =>{
-    elm.style.background = 'user_choice';
-})
-
-
-```
-
+For more detailed information please see the Wiki!
