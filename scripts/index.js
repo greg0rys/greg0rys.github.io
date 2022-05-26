@@ -130,3 +130,6 @@ function styleFooter() {
     temporary use of javascrip to supply current year, will reimplement the clock;
  */
 document.querySelector("#date").innerHTML = new Date().getFullYear().toString() + ` &copy;`;
+
+let x = document.querySelectorAll(".cat");
+x.forEach(el => {el.style.color="ghostwhite"});

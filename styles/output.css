@@ -7358,10 +7358,6 @@ body[dir="rtl"] .checkbox:checked,
   width: 1.5rem;
 }
 
-.w-56 {
-  width: 14rem;
-}
-
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -8588,6 +8584,11 @@ body[dir="rtl"] .checkbox:checked,
 .text-orange-500 {
   --tw-text-opacity: 1;
   color: rgb(249 115 22 / var(--tw-text-opacity));
+}
+
+.text-slate-100 {
+  --tw-text-opacity: 1;
+  color: rgb(241 245 249 / var(--tw-text-opacity));
 }
 
 .text-neutral-content {
