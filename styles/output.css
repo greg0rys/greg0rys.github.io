@@ -502,8 +502,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-.relative {
-  position: relative;
+.fixed {
+  position: fixed;
 }
 
 .bottom-0 {
@@ -558,8 +558,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-row: span 6 / span 6;
 }
 
-.row-span-2 {
-  grid-row: span 2 / span 2;
+.row-span-4 {
+  grid-row: span 4 / span 4;
 }
 
 .row-start-1 {
@@ -619,8 +619,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid-cols-3 {
@@ -631,12 +631,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-template-rows: repeat(6, minmax(0, 1fr));
 }
 
-.grid-rows-2 {
-  grid-template-rows: repeat(2, minmax(0, 1fr));
+.grid-rows-4 {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
 }
 
-.grid-rows-1 {
-  grid-template-rows: repeat(1, minmax(0, 1fr));
+.grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
 }
 
 .content-center {
