@@ -5,7 +5,7 @@
   "main": "scripts/index.js",
   "scripts": {
     "test": "run",
-    "build": "npx tailwindcss -i ./styles/index.css -o ./styles/output.css",
+    "build": " npx tailwindcss -i ./styles/index.css -o ./styles/output.css  ",
     "git": "git add . && git commit -m",
     "postgit": "npm run build & git push --all"
   },
