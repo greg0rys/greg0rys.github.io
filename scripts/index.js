@@ -1,3 +1,7 @@
+const { JSDOM } = require("jsdom");
+const { window } = new JSDOM("");
+const $ = require("jquery")(window);
+
 function getCurrentTime() {
     const currentTime = new Date();
     let h = currentTime.getHours();
@@ -123,3 +127,5 @@ let x = document.body.children[0];
 x.forEach(elm=>{
     elm.style.color = 'red';
 })
+
+document.querySelector("#date").innerHTML = new Date().getFullYear();
