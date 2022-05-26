@@ -502,8 +502,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-.fixed {
-  position: fixed;
+.relative {
+  position: relative;
 }
 
 .bottom-0 {
