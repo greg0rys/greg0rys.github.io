@@ -8429,12 +8429,13 @@ body[dir="rtl"] .checkbox:checked,
      object-fit: scale-down;
 }
 
-.p-2 {
-  padding: 0.5rem;
-}
-
 .p-4 {
   padding: 1rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .px-1 {
@@ -8979,6 +8980,16 @@ footer.row {
 #clock {
   display: block;
   color: burlywood;
+}
+
+.menu>.menu-title > span {
+  --tw-text-opacity: 1;
+  color: rgb(241 245 249 / var(--tw-text-opacity));
+  text-align: center;
+}
+
+.menu > * {
+  text-align: center;
 }
 
 /*img {*/

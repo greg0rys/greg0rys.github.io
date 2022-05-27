@@ -33,6 +33,17 @@ footer.row {
     color: burlywood;
 }
 
+
+
+ .menu>.menu-title > span{
+    @apply text-slate-100;
+     @apply text-center;
+}
+
+.menu > * {
+    @apply text-center;
+}
+
 /*img {*/
 /*    border: 1px solid #ddd;*/
 /*    border-radius: 50%;*/
