@@ -21,7 +21,7 @@ body {
 
 .state>section {
     grid-area: bar1;
-    background: darkorchid;
+    background: lightseagreen;
 }
 
 .state>section>p {
