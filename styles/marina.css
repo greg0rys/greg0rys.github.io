@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
+.box {
+    width 75%;
+    margin: auto;
+}
+
+body {
+    background: darkkhaki;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.state {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-areas: "bar1 bar1 bar1" "bar2 bar2 bar2";
+    gap: 3rem;
+    padding: 1rem;
+}
+
+.state>section {
+    grid-area: bar1;
+    background: darkorchid;
+}
+
+.state>section>p {
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    font-family: "Cookie", cursive;
+    font-size: 3rem;
+    text-shadow: 3px 2px 1px darkolivegreen;
+    color: lightsalmon;
+}
+
+.state>article {
+    grid-area: bar2;
+    background: darkolivegreen;
+    font-family: "Cookie", cursive;
+    font-size: 3rem;
+    text-shadow: 1px 3px 1px rebeccapurple;
+    color: darksalmon;
+}
+
+.state>article>p {
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+center {
+    font-family: "Cookie", cursive;
+    font-size: 3rem;
+    padding: 3px;
+    text-shadow: 1px 3px 2px ghostwhite;
+    color: darkred;
+}
+
+article::before {
+    content: "baby you dont have live your life in fear";
+    font-size: 2rem;
+}
+
+section::before {
+    content: "baby you dont have live your life in fear";
+    font-family: "Cookie", cursive;
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+    text-shadow: 1px 5px 2px darkolivegreen;
+    color: burlywood;
+    opacity: 1.5;
+}
