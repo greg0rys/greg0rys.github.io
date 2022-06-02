@@ -60,12 +60,12 @@ center {
 }
 
 article::before {
-    content: "baby you dont have live your life in fear";
+    content: "Lonely Hearts Club - Marina";
     font-size: 2rem;
 }
 
 section::before {
-    content: "baby you dont have live your life in fear";
+    content: "Buy the Stars - Marina";
     font-family: "Cookie", cursive;
     font-size: 2em;
     margin: 0;

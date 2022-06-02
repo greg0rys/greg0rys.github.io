@@ -1,10 +1,7 @@
-function loopLyric() {
-    var loopHeader = setInterval(changeText, 5005);
-}
+const box1 = document.querySelector("section > p");
+const box2 = document.querySelector("article > p");
 
-var index = 0;
-
-var lyric = [
+var buyTheStars = [
     "You bought a star in the sky tonight",
     "Because your life is dark",
     "and it needs some light.",
@@ -23,10 +20,34 @@ var lyric = [
     "And you could buy up all the starts",
     "But it wouldn't change who you are",
 ];
+var lonelyHeartsClub = [
+    "Laugh track on a tv show",
+    "echos in the dark alone",
+    "I got to be feeling bad",
+    "That I'm the reason you're sad",
+    "January to Decemember, do you want to be a member?",
+    "Lonely hearts club, oh",
+];
+
+function loopLyric() {
+    var loopHeader = setInterval(changeText, 5005);
+    var x = setInterval(changeHearts, 3009);
+}
+
+var index = 0;
 
 function changeText() {
-    index = index == lyric.length ? 0 : index;
-    document.querySelector("section > p").innerHTML = lyric[index];
+    index = index == buyTheStars.length ? 0 : index;
+    document.querySelector("section > p").innerHTML = buyTheStars[index];
 
     index++;
+}
+
+var y = 0;
+
+function changeHearts() {
+    y = y == lonelyHeartsClub.length ? 0 : y;
+    document.querySelector(".state > article > p").innerHTML =
+        lonelyHeartsClub[y];
+    y++;
 }
