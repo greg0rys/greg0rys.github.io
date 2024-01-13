@@ -14,7 +14,8 @@ published: true
 
 |                      Project                       | Repo | Language |
 |:--------------------------------------------------:| :---: | :---:|
-| [Link to a document]({% link /RubdyDex.html %}) | [RubyDex]({{page.github_base}}/RubyDex) | Ruby |
+| [Link to a
+document]({{site.url}}/RubyDex.html) | [RubyDex]({{page.github_base}}/RubyDex) | Ruby |
 
 
 {{page.projects.name}}
