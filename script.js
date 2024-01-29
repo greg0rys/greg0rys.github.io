@@ -177,4 +177,5 @@ document.addEventListener("DOMContentLoaded", () => {
     i.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${get_random_pokemon_number()}.png`;
     console.warn(`The image source is ${i.src}`);
     document.querySelector("#nav_text").append(i);
+    document.querySelector("#fave").href = i.src;
 });
