@@ -1,0 +1,317 @@
+<head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Honk&family=Roboto+Mono:ital,wght@1,600&display=swap");
+
+body {
+    background-color: #f3f4f7; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Mono", monospace;
+}
+
+.navbar {
+    background-color: #e74c3c; /* Pokemon red */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    margin-right: auto;
+}
+
+.navbar-link {
+    color: #ffffff; /* White text */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-link:hover {
+    text-decoration: underline;
+}
+
+.container {
+    background-color: #ffffff; /* White container background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 50px;
+}
+
+h2 {
+    color: #e74c3c; /* Pokemon red */
+    text-align: center;
+}
+
+.form-label,
+.btn {
+    color: #3498db; /* Pokemon blue */
+}
+
+.btn-primary {
+    background-color: #e74c3c; /* Pokemon red */
+    border-color: #e74c3c;
+}
+
+.btn-primary:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    border-color: #c0392b;
+}
+
+img {
+    border-radius: 10px;
+    max-width: 100%; /* Make the image responsive */
+    display: block;
+    margin: 0 auto; /* Center the image */
+}
+
+.font-semibold {
+    font-weight: bold;
+}
+
+#pokemon_info {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Three columns */
+    gap: 20px;
+    align-items: center;
+}
+
+.pokemon-name,
+.pokemon-id,
+.pokemon-type {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.pokemon-type p {
+    display: inline-block;
+    margin: 0 5px; /* Add some spacing between types */
+}
+
+.pokemon-details {
+    margin-top: 20px;
+}
+
+/* New styles added for profile card-like layout */
+.pokemon-name {
+    text-align: center;
+}
+
+.pokemon-id {
+    text-align: center;
+}
+
+.pokemon-type {
+    text-align: center;
+}
+
+  </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <p id="nav_text">Greg Shenefelt - Pokedex</p>
+        </div>
+        <a href="https://gregoryshenefelt.com" class="navbar-link">Visit GregoryShenefelt.com</a>
+    </nav>
+
+    <div class="container">
+        <h2>Pokemon Search</h2>
+        <div class="mb-3">
+            <label for="pokemonName" class="form-label">Enter Pokemon Name or ID:</label>
+            <input type="text" id="pokemonName" class="form-control" placeholder="E.g., Pikachu">
+        </div>
+        <button onclick="searchPokemon()" class="btn btn-primary">Search</button>
+
+        <div id="result" class="mt-4">
+            <!-- Pokemon details will be displayed here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+<script>
+  class Pokemon {
+    constructor(data) {
+        this.id = data.id;
+        this.name = data.name;
+        this.types = data.types.map((type) => type.type.name);
+        this.moves = data.moves.map((move) => move.move.name);
+        this.sprites = {
+            front_default: data.sprites.front_default
+        };
+        this.species = {
+            url: data.species.url
+        };
+    }
+
+    display() {
+        console.log(`ID: ${this.id}`);
+        console.log(`Name: ${this.name}`);
+        console.log(`Types: ${this.types.join(", ")}`);
+        console.log(`Moves: ${this.moves.join(", ")}`);
+        console.log(`Sprite: ${this.sprites.front_default}`);
+        console.log(`Species URL: ${this.species.url}`);
+    }
+}
+
+// const dataFromAPI = {
+//     id: 25,
+//     name: "pikachu",
+//     types: [{ type: { name: "electric" } }],
+//     moves: [
+//         { move: { name: "thundershock" } },
+//         { move: { name: "quick attack" } }
+//     ],
+//     sprites: {
+//         front_default: "https://pokeapi.co/media/sprites/pokemon/25.png"
+//     },
+//     species: { url: "https://pokeapi.co/api/v2/pokemon-species/25/" }
+// };
+
+// const pikachu = new Pokemon(dataFromAPI);
+// pikachu.display();
+
+let pokemon = []; // store pokemon from the searches
+
+// search for a given pokemon via the API
+function searchPokemon() {
+    const input = document.getElementById("pokemonName");
+    const pokemonName = input.value.toLowerCase();
+
+    if (!pokemonName) {
+        alert("Please enter a Pokemon name or ID.");
+        return;
+    }
+
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Pokemon not found. Please try again.");
+            }
+            return response.json();
+        })
+        .then((data) => {
+            fetchMoves(data.moves);
+            fetchCompatibilityWithTMs(data.id);
+            pokemon.push(new Pokemon(data));
+            console.log(`From newly made pokemon ${pokemon[0].name}`);
+            displayPokemon(data);
+            fetchEvolutionChain(data.species.url);
+        })
+        .catch((error) => {
+            console.error("Error fetching Pokemon data:", error);
+            alert(error.message);
+        });
+}
+
+function fetchEvolutionChain(speciesUrl) {
+    fetch(speciesUrl)
+        .then((response) => response.json())
+        .then((speciesData) => {
+            if (speciesData.evolution_chain) {
+                fetch(speciesData.evolution_chain.url)
+                    .then((response) => response.json())
+                    .then((evolutionChainData) => {
+                        displayEvolutionChain(evolutionChainData);
+                    })
+                    .catch((error) => {
+                        console.error(
+                            "Error fetching evolution chain data:",
+                            error
+                        );
+                    });
+            }
+        })
+        .catch((error) => {
+            console.error("Error fetching species data:", error);
+        });
+}
+
+function displayEvolutionChain(evolutionChainData) {
+    const resultDiv = document.getElementById("result");
+    if (!resultDiv) return;
+
+    const evolutionDiv = document.createElement("div");
+    evolutionDiv.classList.add("pokemon-details");
+    evolutionDiv.style.color = "#e74c3c"; // set the eveolutions to pokemon red
+
+    const evolutionTitle = document.createElement("p");
+    evolutionTitle.classList.add("font-semibold");
+    evolutionTitle.textContent = "Evolution Chain:";
+    evolutionDiv.appendChild(evolutionTitle);
+
+    evolutionChainData.chain.evolves_to.forEach((stage) => {
+        const stageName = stage.species.name;
+        const stageDetails = document.createElement("p");
+
+        stageDetails.textContent = ucfirst(stageName);
+        console.log("here is evolution data");
+        console.log(evolutionChainData.chain.evolves_to);
+        evolutionDiv.appendChild(stageDetails);
+    });
+
+    resultDiv.appendChild(evolutionDiv);
+}
+
+function fetchMoves(movesData) {
+    // You can implement this function to fetch and display moves
+}
+
+function fetchCompatibilityWithTMs(pokemonId) {
+    // You can implement this function to fetch and display compatibility with TMs
+}
+
+function displayPokemon(data) {
+    const resultDiv = document.getElementById("result");
+    if (!resultDiv) return;
+
+    resultDiv.innerHTML = "";
+
+    const pokemonImg = document.createElement("img");
+    // get the shiny sprite from api
+    pokemonImg.src = data.sprites.front_shiny;
+    pokemonImg.classList.add("pokemon-img");
+    resultDiv.appendChild(pokemonImg);
+
+    const pokemonName = document.createElement("h2");
+    pokemonName.textContent = ucfirst(data.name);
+    pokemonName.classList.add("pokemon-name", "font-semibold");
+    resultDiv.appendChild(pokemonName);
+
+    const pokemonId = document.createElement("p");
+    pokemonId.textContent = `ID: ${data.id}`;
+    pokemonId.classList.add("pokemon-id");
+    resultDiv.appendChild(pokemonId);
+
+    const pokemonTypeDiv = document.createElement("div");
+    pokemonTypeDiv.classList.add("pokemon-type");
+    data.types.forEach((type) => {
+        const typeElement = document.createElement("p");
+        typeElement.textContent = ucfirst(type.type.name);
+        pokemonTypeDiv.appendChild(typeElement);
+    });
+    resultDiv.appendChild(pokemonTypeDiv);
+    //pokemon = []; // cleary the array of all results so it always only has the current search in it
+}
+
+function ucfirst(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+// largest pokemon number is 1025 smallest is 1
+function get_random_pokemon_number() {
+    // * (max - min) + min
+    return Math.floor(Math.random() * (1025 - 1) + 1);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    let i = document.createElement("img");
+    i.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${get_random_pokemon_number()}.png`;
+    console.warn(`The image source is ${i.src}`);
+    document.querySelector("#nav_text").append(i);
+});
+
+</script>
+</body>
