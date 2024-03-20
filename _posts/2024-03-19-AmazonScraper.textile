@@ -1,0 +1,8 @@
+---
+layout: default
+title: "Amazon Scraper"
+date: 2024-03-19
+categories: webscraping, ruby, nokigiri
+---
+
+h1. hey!
