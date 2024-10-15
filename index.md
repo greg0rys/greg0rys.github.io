@@ -1,11 +1,92 @@
 ---
 layout: default
-title: Welcome to shenefelt.net
+title: ~/shenefelt.net
 ---
 
-## About Me
+# Greg Shenefelt - Resume
 
-I’m a backend Java developer with over 4 years of experience building scalable applications for small businesses. 
-On this site, you'll find my latest projects, blogs, and ways to get in touch with me.
+**Location:** Portland, OR  
+**Phone:** 503-330-1866  
+**Email:** [greg@shenefelt.net](mailto:greg@shenefelt.net)  
+**LinkedIn:** [linkedin.com/in/greg-shenefelt](https://linkedin.com/in/greg-shenefelt)
 
-[Explore My Projects](/projects)
+---
+
+## Professional Profile
+
+Driven and knowledgeable professional with several years of experience and education in database design, web and Java applications, and computer information systems. Results-oriented employee who has successfully trained and developed teams, analyzed market trends to maximize opportunities, and utilized extensive knowledge to accurately guide staff. Looking for opportunities to contribute to new and existing projects with the latest programming ideologies and provide meaningful collaboration with a team of programmers.
+
+---
+
+## Technical Skills
+
+- SQL Server  
+- MS Access  
+- Java  
+- PHP  
+- HTML  
+- CSS  
+- Javascript  
+- JQuery  
+- Python  
+- Java Swing  
+- GIT  
+- GitHub  
+- Linux  
+- Oracle Database
+
+---
+
+## Work Experience
+
+### **Tier 3 Help Desk Technician**  
+**Location:** Portland, OR | Current  
+**Company:** Silver Linings Technology
+
+- Handle escalated technical issues, resolving complex problems efficiently and minimizing client downtime.
+- Act as the direct point of contact between clients and technical solutions, ensuring effective communication and issue resolution.
+- Manage six company clients independently, providing tailored support and maintaining strong client relationships.
+- Provide exceptional customer service by addressing client needs with professionalism and empathy, ensuring a high level of client satisfaction.
+- Continuously improve the company knowledge base by documenting solutions, updating procedures, and sharing best practices.
+- Mentor and coach new staff members, providing guidance and expertise to help them succeed in their roles.
+
+### **Lead Help Desk Technician**  
+**Location:** Portland, OR | Nov 2023 - May 2024  
+**Company:** Silver Linings Technology
+
+- Managed the help desk staff, including handling schedules and ensuring appropriate coverage to meet client needs.
+- Trained staff on new processes, technical skills, and customer service techniques, ensuring team readiness and effectiveness.
+- Led daily staff huddles to communicate updates, address issues, and set daily priorities.
+- Documented all new processes and updates to ensure a consistent and up-to-date knowledge base.
+- Participated in Quarterly Business Reviews (QBRs) for all clients, providing insights and updates on help desk performance and client satisfaction.
+- Improved staff metrics by setting performance goals, monitoring progress, and implementing strategies for continuous improvement.
+- Designed and implemented bonus structures to incentivize high performance and reward achievements.
+
+### **General Lines Insurance Supervisor**  
+**Location:** San Antonio, TX | Mar 2015 - Sep 2018  
+**Company:** Farmers Insurance
+
+- Clarified company risk policies for operating outside agents and investigated insured-initiated claims.
+- Calculated insurance premium increases based on current market factors.
+- Trained representatives in researching insurance law per state to qualify accurate policy trends.
+- Set daily and weekly goals for internal policy conversions submitted by field agents.
+- Performed retroactive policy changes as a licensed insurance agent.
+
+---
+
+## Education
+
+**Bachelor of Science**  
+*Portland State University* | Dec 2024  
+Major: Computer Science, GPA: 3.6
+
+**Associate of Applied Science**  
+*Portland Community College* | Dec 2022  
+Major: Computer Information Systems, GPA: 3.5
+
+**Certificates:**
+
+- **Database Design & Development** | Portland Community College | Mar 2022  
+- **Web Application Development** | Portland Community College | Mar 2022  
+- **Java Application Development** | Portland Community College | Mar 2022
+
