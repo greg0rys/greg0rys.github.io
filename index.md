@@ -20,20 +20,14 @@ Driven and knowledgeable professional with several years of experience and educa
 
 ## Technical Skills
 
-- SQL Server  
-- MS Access  
-- Java  
-- PHP  
-- HTML  
-- CSS  
-- Javascript  
-- JQuery  
-- Python  
-- Java Swing  
-- GIT  
-- GitHub  
-- Linux  
-- Oracle Database
+| **Category**          | **Skills**                                  |
+| --------------------- | ------------------------------------------- |
+| **Programming Languages** | Java, PHP, Python, Javascript, Java Swing |
+| **Web Technologies**      | HTML, CSS, JQuery                        |
+| **Databases**             | SQL Server, MS Access, Oracle Database    |
+| **Version Control**       | GIT, GitHub                              |
+| **Operating Systems**     | Linux                                    |
+
 
 ---
 
