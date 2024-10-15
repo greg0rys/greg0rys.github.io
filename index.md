@@ -10,6 +10,7 @@ title: ~/shenefelt.net
 **Location:** Portland, OR  
 **Email:** [greg@shenefelt.net](mailto:greg@shenefelt.net)  
 **LinkedIn:** [linkedin.com/in/greg-shenefelt](https://linkedin.com/in/greg-shenefelt)
+**GitHub:** [github.com/greg0rys](https://www.github.com/greg0rys)
 
 ---
 
