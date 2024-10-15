@@ -1,6 +1,6 @@
 ---
-layout: custom
-title: Welcome to [Your Name]'s Website
+layout: default
+title: Welcome to shenefelt.net
 ---
 
 ## About Me
