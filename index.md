@@ -22,13 +22,17 @@ Driven and knowledgeable professional with several years of experience and educa
 
 ## Technical Skills
 
+## Technical Skills
+
 | **Category**              | **Skills**                                    |
 | ------------------------- | --------------------------------------------- |
 | **Programming Languages** | Java, PHP, Python, Javascript, Java Swing      |
 | **Web Technologies**      | HTML, CSS, JQuery                             |
 | **Databases**             | SQL Server, MS Access, Oracle Database        |
 | **Version Control**       | GIT, GitHub                                   |
-| **Operating Systems**     | Linux                                         |
+| **Operating Systems**     | Linux, Windows, macOS                         |
+| **Network & DNS**         | DNS Configuration, IPv4, RDP, Firewall Setup  |
+
 
 ---
 
