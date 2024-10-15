@@ -8,7 +8,6 @@ title: ~/shenefelt.net
 ---
 
 **Location:** Portland, OR  
-**Phone:** 503-330-1866  
 **Email:** [greg@shenefelt.net](mailto:greg@shenefelt.net)  
 **LinkedIn:** [linkedin.com/in/greg-shenefelt](https://linkedin.com/in/greg-shenefelt)
 
