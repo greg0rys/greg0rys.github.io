@@ -5,6 +5,8 @@ title: ~/shenefelt.net
 
 # Greg Shenefelt - Resume
 
+---
+
 **Location:** Portland, OR  
 **Phone:** 503-330-1866  
 **Email:** [greg@shenefelt.net](mailto:greg@shenefelt.net)  
@@ -20,14 +22,13 @@ Driven and knowledgeable professional with several years of experience and educa
 
 ## Technical Skills
 
-| **Category**          | **Skills**                                  |
-| --------------------- | ------------------------------------------- |
-| **Programming Languages** | Java, PHP, Python, Javascript, Java Swing |
-| **Web Technologies**      | HTML, CSS, JQuery                        |
-| **Databases**             | SQL Server, MS Access, Oracle Database    |
-| **Version Control**       | GIT, GitHub                              |
-| **Operating Systems**     | Linux                                    |
-
+| **Category**              | **Skills**                                    |
+| ------------------------- | --------------------------------------------- |
+| **Programming Languages** | Java, PHP, Python, Javascript, Java Swing      |
+| **Web Technologies**      | HTML, CSS, JQuery                             |
+| **Databases**             | SQL Server, MS Access, Oracle Database        |
+| **Version Control**       | GIT, GitHub                                   |
+| **Operating Systems**     | Linux                                         |
 
 ---
 
@@ -78,9 +79,10 @@ Major: Computer Science, GPA: 3.6
 *Portland Community College* | Dec 2022  
 Major: Computer Information Systems, GPA: 3.5
 
-**Certificates:**
+### **Certificates:**
 
 - **Database Design & Development** | Portland Community College | Mar 2022  
 - **Web Application Development** | Portland Community College | Mar 2022  
 - **Java Application Development** | Portland Community College | Mar 2022
+
 
