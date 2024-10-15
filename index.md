@@ -22,8 +22,6 @@ Driven and knowledgeable professional with several years of experience and educa
 
 ## Technical Skills
 
-## Technical Skills
-
 | **Category**              | **Skills**                                    |
 | ------------------------- | --------------------------------------------- |
 | **Programming Languages** | Java, PHP, Python, Javascript, Java Swing      |
