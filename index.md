@@ -59,16 +59,14 @@ Driven and knowledgeable professional with several years of experience and educa
 - Improved staff metrics by setting performance goals, monitoring progress, and implementing strategies for continuous improvement.
 - Designed and implemented bonus structures to incentivize high performance and reward achievements.
 
-### **General Lines Insurance Supervisor**  
-**Location:** San Antonio, TX | Mar 2015 - Sep 2018  
-**Company:** Farmers Insurance
+### **Software Developer I**  
+**Location:** Portland, OR | Jan 2023 - Current  
+**Company:** Cannabis Technology Partners
 
-- Clarified company risk policies for operating outside agents and investigated insured-initiated claims.
-- Calculated insurance premium increases based on current market factors.
-- Trained representatives in researching insurance law per state to qualify accurate policy trends.
-- Set daily and weekly goals for internal policy conversions submitted by field agents.
-- Performed retroactive policy changes as a licensed insurance agent.
-
+- Clarified company risk policies for operating outside pragmatic interfaces.
+- Secure Backend coding structures for security. 
+- Implement algorithmic design to solve data storage issues.
+- Set daily and weekly goals for internal development goals.
 ---
 
 ## Education
