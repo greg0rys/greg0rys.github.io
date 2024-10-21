@@ -71,10 +71,6 @@ Driven and knowledgeable professional with several years of experience and educa
 
 ## Education
 
-**Bachelor of Science**  
-*Portland State University* | Dec 2024  
-Major: Computer Science, GPA: 3.6
-
 **Associate of Applied Science**  
 *Portland Community College* | Dec 2022  
 Major: Computer Information Systems, GPA: 3.5
