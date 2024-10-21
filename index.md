@@ -67,6 +67,8 @@ Driven and knowledgeable professional with several years of experience and educa
 - Secure Backend coding structures for security. 
 - Implement algorithmic design to solve data storage issues.
 - Set daily and weekly goals for internal development goals.
+
+
 ---
 
 ## Education
