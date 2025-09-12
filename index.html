@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unmunchable</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            position: relative;
+        }
+
+        .main-text {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            margin-bottom: 2rem;
+            animation: pulse 3s ease-in-out infinite;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .main-text:hover {
+            transform: scale(1.1);
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.05);
+            }
+        }
+
+        .sub-text {
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            animation: float 4s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .word {
+            display: inline-block;
+            animation: colorShift 6s ease-in-out infinite;
+        }
+
+        .word:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .word:nth-child(2) {
+            animation-delay: 3s;
+        }
+
+        @keyframes colorShift {
+            0%, 100% {
+                color: #fff;
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            }
+            25% {
+                color: #ff6b6b;
+                text-shadow: 0 0 20px rgba(255, 107, 107, 0.8);
+            }
+            50% {
+                color: #4ecdc4;
+                text-shadow: 0 0 20px rgba(78, 205, 196, 0.8);
+            }
+            75% {
+                color: #45b7d1;
+                text-shadow: 0 0 20px rgba(69, 183, 209, 0.8);
+            }
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: drift 20s linear infinite;
+        }
+
+        @keyframes drift {
+            0% {
+                transform: translateY(100vh) translateX(0px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .click-effect {
+            position: absolute;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: ripple 0.6s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            100% {
+                width: 100px;
+                height: 100px;
+                opacity: 0;
+            }
+        }
+
+        .glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        .letter {
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .letter:hover {
+            transform: translateY(-10px) rotate(10deg);
+            color: #ffd700;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .main-text {
+                font-size: 2.5rem;
+            }
+            .sub-text {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-text {
+                font-size: 2rem;
+            }
+            .sub-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="glow"></div>
+
+<div class="particles" id="particles"></div>
+
+<div class="container">
+    <div class="main-text" id="mainText">
+        <span class="word" id="word1"></span>
+    </div>
+    <div class="sub-text" id="subText">
+        <span class="word" id="word2"></span>
+    </div>
+</div>
+
+<script>
+    // Create particles
+    function createParticles() {
+        const particlesContainer = document.getElementById('particles');
+
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particle.style.animationDelay = Math.random() * 20 + 's';
+            particlesContainer.appendChild(particle);
+        }
+    }
+
+    // Animate text letter by letter
+    function animateText(element, text, delay = 100) {
+        element.innerHTML = '';
+        const letters = text.split('');
+
+        letters.forEach((letter, index) => {
+            const span = document.createElement('span');
+            span.className = 'letter';
+            span.textContent = letter === ' ' ? '\u00A0' : letter;
+            span.style.animationDelay = (index * 0.1) + 's';
+            element.appendChild(span);
+
+            setTimeout(() => {
+                span.style.opacity = '1';
+                span.style.transform = 'translateY(0)';
+            }, index * delay);
+        });
+    }
+
+    // Click effect
+    function createClickEffect(e) {
+        const effect = document.createElement('div');
+        effect.className = 'click-effect';
+        effect.style.left = (e.clientX - 50) + 'px';
+        effect.style.top = (e.clientY - 50) + 'px';
+
+        document.body.appendChild(effect);
+
+        setTimeout(() => {
+            document.body.removeChild(effect);
+        }, 600);
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+        createParticles();
+
+        // Animate the words
+        setTimeout(() => {
+            animateText(document.getElementById('word1'), 'UNMUNCHABLE');
+        }, 500);
+
+        setTimeout(() => {
+            animateText(document.getElementById('word2'), 'UNMUNCHABLE');
+        }, 2000);
+    });
+
+    // Add click effects
+    document.addEventListener('click', createClickEffect);
+
+    // Add random text glow effect
+    setInterval(() => {
+        const words = document.querySelectorAll('.word');
+        words.forEach(word => {
+            if (Math.random() > 0.7) {
+                word.style.textShadow = '0 0 30px rgba(255, 255, 255, 1)';
+                setTimeout(() => {
+                    word.style.textShadow = '';
+                }, 500);
+            }
+        });
+    }, 3000);
+
+    // Mouse trail effect
+    let mouseTrail = [];
+    document.addEventListener('mousemove', function(e) {
+        mouseTrail.push({x: e.clientX, y: e.clientY, time: Date.now()});
+
+        if (mouseTrail.length > 20) {
+            mouseTrail.shift();
+        }
+
+        // Create trail particles
+        if (Math.random() > 0.8) {
+            const trail = document.createElement('div');
+            trail.style.position = 'absolute';
+            trail.style.left = e.clientX + 'px';
+            trail.style.top = e.clientY + 'px';
+            trail.style.width = '3px';
+            trail.style.height = '3px';
+            trail.style.background = 'rgba(255, 255, 255, 0.6)';
+            trail.style.borderRadius = '50%';
+            trail.style.pointerEvents = 'none';
+            trail.style.animation = 'drift 2s ease-out forwards';
+            trail.style.zIndex = '5';
+
+            document.body.appendChild(trail);
+
+            setTimeout(() => {
+                if (trail.parentNode) {
+                    document.body.removeChild(trail);
+                }
+            }, 2000);
+        }
+    });
+</script>
+</body>
+</html>
