@@ -538,7 +538,7 @@
         </div>
         
         <div class="percentage" id="percentage">0%</div>
-        <div class="loading-text">LOADING GAME OVER SCREEN...</div>
+        <div class="loading-text">Laughing @ u</div>
     </div>
 </div>
 
@@ -669,20 +669,20 @@
 
     function startCountdown() {
         const countdownElement = document.getElementById('countdown');
-        let timer = 15;
+        let timer = 12;
         countdownElement.textContent = timer;
 
         const interval = setInterval(() => {
             timer--;
             if (timer < 0) {
-                timer = 15;
+                timer = 12;
             }
             countdownElement.textContent = timer;
         }, 1000);
     }
 
     function handleContinue() {
-        alert('Good Luck Loser');
+        alert('Good luck, loser');
         // Add your continue logic here
     }
 
