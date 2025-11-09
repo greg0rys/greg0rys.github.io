@@ -17,13 +17,176 @@
             background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 100%);
             min-height: 100vh;
             overflow-x: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             position: relative;
             color: #fff;
             image-rendering: pixelated;
+        }
+
+        /* PRELOADER STYLES */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1s ease;
+        }
+
+        .preloader.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .preloader-content {
+            text-align: center;
             padding: 20px;
+            max-width: 90%;
+        }
+
+        .result-text {
+            font-size: clamp(1.5rem, 5vw, 3rem);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .winner {
+            color: #00ff00;
+            text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+            animation: winnerGlow 2s ease-in-out infinite;
+            display: block;
+            margin: 20px 0;
+        }
+
+        .loser {
+            color: #ff0000;
+            text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
+            animation: loserShake 3s ease-in-out infinite;
+            display: block;
+            margin: 20px 0;
+        }
+
+        @keyframes winnerGlow {
+            0%, 100% {
+                transform: scale(1);
+                text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+            }
+            50% {
+                transform: scale(1.05);
+                text-shadow: 0 0 30px #00ff00, 0 0 60px #00ff00, 0 0 80px #00ff00;
+            }
+        }
+
+        @keyframes loserShake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+
+        .loading-bar-container {
+            width: 100%;
+            max-width: 500px;
+            height: 30px;
+            background: #222;
+            border: 3px solid #00ffff;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            margin: 30px auto;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .loading-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #00ffff, #ff00ff, #ffff00);
+            background-size: 200% 100%;
+            animation: loadingProgress 10s linear forwards, gradientMove 2s linear infinite;
+            width: 0%;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        @keyframes loadingProgress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 200% 0%; }
+        }
+
+        .loading-text {
+            font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+            color: #00ffff;
+            margin-top: 20px;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .percentage {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: #fff;
+            margin-top: 20px;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        .pixel-corners {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #ff00ff;
+        }
+
+        .pixel-corners.top-left {
+            top: 20px;
+            left: 20px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .pixel-corners.top-right {
+            top: 20px;
+            right: 20px;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .pixel-corners.bottom-left {
+            bottom: 20px;
+            left: 20px;
+            border-right: none;
+            border-top: none;
+        }
+
+        .pixel-corners.bottom-right {
+            bottom: 20px;
+            right: 20px;
+            border-left: none;
+            border-top: none;
+        }
+
+        /* MAIN CONTENT STYLES */
+        .main-content {
+            display: none;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .main-content.show {
+            display: flex;
+            opacity: 1;
         }
 
         /* Scanline effect */
@@ -107,24 +270,46 @@
         .main-text {
             font-size: clamp(1.5rem, 5vw, 2.5rem);
             font-weight: bold;
-            background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ff00);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientShift 8s ease infinite;
+            color: #fff;
+            animation: colorShift 6s ease-in-out infinite;
             line-height: 1.5;
             margin: 10px 0;
-            filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.8));
+            transition: all 0.5s ease;
+        }
+        
+        .main-text.glitch {
+            animation: colorShift 6s ease-in-out infinite, glitchEffect 0.3s ease;
+        }
+
+        @keyframes glitchEffect {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-5px, 5px); }
+            40% { transform: translate(5px, -5px); }
+            60% { transform: translate(-5px, -5px); }
+            80% { transform: translate(5px, 5px); }
         }
         
         #mainText2 {
-            animation-delay: 0.5s;
+            animation-delay: 3s;
         }
 
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+        @keyframes colorShift {
+            0%, 100% {
+                color: #fff;
+                text-shadow: 0 0 10px #fff, 0 0 20px #00aaff;
+            }
+            25% {
+                color: #ffea00;
+                text-shadow: 0 0 10px #ffea00, 0 0 20px #ffc400;
+            }
+            50% {
+                color: #00ff00;
+                text-shadow: 0 0 10px #00ff00, 0 0 20px #00cc00;
+            }
+            75% {
+                color: #ff00ff;
+                text-shadow: 0 0 10px #ff00ff, 0 0 20px #cc00cc;
+            }
         }
 
         .divider {
@@ -243,8 +428,7 @@
 
         .letter:hover {
             transform: scale(1.2) rotate(5deg);
-            color: #ffd700;
-            filter: drop-shadow(0 0 15px #ffd700);
+            text-shadow: 0 0 15px #ffd700 !important;
         }
 
         .credits {
@@ -271,13 +455,34 @@
             .continue-button {
                 padding: 12px 30px;
             }
+
+            .pixel-corners {
+                width: 15px;
+                height: 15px;
+            }
+
+            .pixel-corners.top-left,
+            .pixel-corners.top-right {
+                top: 10px;
+            }
+
+            .pixel-corners.bottom-left,
+            .pixel-corners.bottom-right {
+                bottom: 10px;
+            }
+
+            .pixel-corners.top-left,
+            .pixel-corners.bottom-left {
+                left: 10px;
+            }
+
+            .pixel-corners.top-right,
+            .pixel-corners.bottom-right {
+                right: 10px;
+            }
         }
         
         @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-
             .container {
                 padding: 20px 15px;
                 border-width: 2px;
@@ -307,46 +512,99 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
+            .loading-bar {
+                animation: loadingProgress 10s linear forwards;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="background-grid"></div>
-<div class="particles" id="particles"></div>
-
-<div class="container">
-    <div class="game-over-badge">⚠ GAME OVER ⚠</div>
-
-    <div class="main-text-container">
-        <div class="main-text" id="mainText1"></div>
-        <div class="main-text" id="mainText2"></div>
-    </div>
+<!-- PRELOADER -->
+<div class="preloader" id="preloader">
+    <div class="pixel-corners top-left"></div>
+    <div class="pixel-corners top-right"></div>
+    <div class="pixel-corners bottom-left"></div>
+    <div class="pixel-corners bottom-right"></div>
     
-    <div class="divider"></div>
-
-    <div class="continue-section">
-        <div class="sub-text" id="subText"></div>
+    <div class="preloader-content">
+        <div class="result-text">
+            <span class="loser">Michael loses.</span>
+            <span class="winner">Greg wins.</span>
+        </div>
         
-        <div class="countdown-container">
-            <span class="sub-text" style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 0;">⏰</span>
-            <div class="countdown" id="countdown"></div>
+        <div class="loading-bar-container">
+            <div class="loading-bar" id="loadingBar"></div>
+        </div>
+        
+        <div class="percentage" id="percentage">0%</div>
+        <div class="loading-text">LOADING GAME OVER SCREEN...</div>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content" id="mainContent">
+    <div class="background-grid"></div>
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <div class="game-over-badge">⚠ GAME OVER ⚠</div>
+
+        <div class="main-text-container">
+            <div class="main-text" id="mainText1"></div>
+            <div class="main-text" id="mainText2"></div>
+        </div>
+        
+        <div class="divider"></div>
+
+        <div class="continue-section">
+            <div class="sub-text" id="subText"></div>
+            
+            <div class="countdown-container">
+                <span class="sub-text" style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 0;">⏰</span>
+                <div class="countdown" id="countdown"></div>
+            </div>
+
+            <button class="continue-button" onclick="handleContinue()">
+                Press to Continue
+            </button>
         </div>
 
-        <button class="continue-button" onclick="handleContinue()">
-            Press to Continue
-        </button>
+        <div class="credits">TRY HARDER NEXT TIME</div>
     </div>
-
-    <div class="credits">INSERT COIN TO CONTINUE</div>
 </div>
 
 <script>
+    // Preloader logic
+    const preloader = document.getElementById('preloader');
+    const mainContent = document.getElementById('mainContent');
+    const percentageElement = document.getElementById('percentage');
+    
+    let percentage = 0;
+    const loadingDuration = 10000; // 10 seconds
+    const updateInterval = 100; // Update every 100ms
+    const incrementPerUpdate = 100 / (loadingDuration / updateInterval);
+    
+    const percentageInterval = setInterval(() => {
+        percentage += incrementPerUpdate;
+        if (percentage >= 100) {
+            percentage = 100;
+            clearInterval(percentageInterval);
+            
+            // Fade out preloader after 10 seconds
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                    mainContent.classList.add('show');
+                    initMainContent();
+                }, 1000);
+            }, 200);
+        }
+        percentageElement.textContent = Math.floor(percentage) + '%';
+    }, updateInterval);
+
+    // Main content functions
     function createParticles() {
         const particlesContainer = document.getElementById('particles');
         const particleCount = window.innerWidth < 768 ? 20 : 30;
@@ -366,7 +624,7 @@
         }
     }
 
-    function animateText(element, text, delay = 80) {
+    function animateText(element, text, delay = 100) {
         element.innerHTML = '';
         const letters = text.split('');
 
@@ -386,44 +644,72 @@
         });
     }
 
+    function transformText() {
+        const mainText1 = document.getElementById('mainText1');
+        const mainText2 = document.getElementById('mainText2');
+        
+        // Add glitch effect
+        mainText1.classList.add('glitch');
+        mainText2.classList.add('glitch');
+        
+        // Wait for glitch to finish then change text
+        setTimeout(() => {
+            animateText(mainText1, 'You Lost,', 60);
+            setTimeout(() => {
+                animateText(mainText2, 'No Surprise', 60);
+            }, 400);
+            
+            // Remove glitch class
+            setTimeout(() => {
+                mainText1.classList.remove('glitch');
+                mainText2.classList.remove('glitch');
+            }, 800);
+        }, 300);
+    }
+
     function startCountdown() {
         const countdownElement = document.getElementById('countdown');
-        let timer = 9;
+        let timer = 15;
         countdownElement.textContent = timer;
 
         const interval = setInterval(() => {
             timer--;
             if (timer < 0) {
-                timer = 9;
+                timer = 15;
             }
             countdownElement.textContent = timer;
         }, 1000);
     }
 
     function handleContinue() {
-        alert('Good Luck!');
+        alert('Good Luck Loser');
         // Add your continue logic here
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
+    function initMainContent() {
         createParticles();
 
         setTimeout(() => {
             animateText(document.getElementById('mainText1'), 'Better Luck');
-        }, 300);
+        }, 500);
 
         setTimeout(() => {
             animateText(document.getElementById('mainText2'), 'Next Time!');
-        }, 800);
+        }, 1200);
 
         setTimeout(() => {
             animateText(document.getElementById('subText'), 'Continue?');
-        }, 1600);
+        }, 2200);
         
         setTimeout(() => {
             startCountdown();
-        }, 2000);
-    });
+        }, 2700);
+
+        // Transform text after 15 seconds
+        setTimeout(() => {
+            transformText();
+        }, 15000); // 15 seconds after game over screen loads
+    }
 
     // Optimize for mobile
     if ('ontouchstart' in window) {
@@ -433,4 +719,3 @@
 
 </body>
 </html>
-
