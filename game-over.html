@@ -20,6 +20,9 @@
             position: relative;
             color: #fff;
             image-rendering: pixelated;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
         /* PRELOADER STYLES */
@@ -275,6 +278,7 @@
             line-height: 1.5;
             margin: 10px 0;
             transition: all 0.5s ease;
+            will-change: color;
         }
         
         .main-text.glitch {
@@ -282,33 +286,104 @@
         }
 
         @keyframes glitchEffect {
-            0%, 100% { transform: translate(0); }
-            20% { transform: translate(-5px, 5px); }
-            40% { transform: translate(5px, -5px); }
-            60% { transform: translate(-5px, -5px); }
-            80% { transform: translate(5px, 5px); }
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            20% { transform: translate3d(-5px, 5px, 0); }
+            40% { transform: translate3d(5px, -5px, 0); }
+            60% { transform: translate3d(-5px, -5px, 0); }
+            80% { transform: translate3d(5px, 5px, 0); }
         }
         
         #mainText2 {
             animation-delay: 3s;
         }
 
-        @keyframes colorShift {
-            0%, 100% {
-                color: #fff;
-                text-shadow: 0 0 10px #fff, 0 0 20px #00aaff;
+        /* Desktop version with glow */
+        @media (min-width: 769px) {
+            @keyframes colorShift {
+                0%, 100% {
+                    color: #fff;
+                    text-shadow: 0 0 10px #fff, 0 0 20px #00aaff;
+                }
+                25% {
+                    color: #ffea00;
+                    text-shadow: 0 0 10px #ffea00, 0 0 20px #ffc400;
+                }
+                50% {
+                    color: #00ff00;
+                    text-shadow: 0 0 10px #00ff00, 0 0 20px #00cc00;
+                }
+                75% {
+                    color: #ff00ff;
+                    text-shadow: 0 0 10px #ff00ff, 0 0 20px #cc00cc;
+                }
             }
-            25% {
-                color: #ffea00;
-                text-shadow: 0 0 10px #ffea00, 0 0 20px #ffc400;
+        }
+
+        /* Mobile version - clearer, less glow */
+        @media (max-width: 768px) {
+            @keyframes colorShift {
+                0%, 100% {
+                    color: #fff;
+                    text-shadow: 0 0 5px rgba(0, 170, 255, 0.6);
+                }
+                25% {
+                    color: #ffea00;
+                    text-shadow: 0 0 5px rgba(255, 196, 0, 0.6);
+                }
+                50% {
+                    color: #00ff00;
+                    text-shadow: 0 0 5px rgba(0, 204, 0, 0.6);
+                }
+                75% {
+                    color: #ff00ff;
+                    text-shadow: 0 0 5px rgba(204, 0, 204, 0.6);
+                }
             }
-            50% {
-                color: #00ff00;
-                text-shadow: 0 0 10px #00ff00, 0 0 20px #00cc00;
+
+            .game-over-badge {
+                text-shadow: 0 0 5px #ff0000;
             }
-            75% {
-                color: #ff00ff;
-                text-shadow: 0 0 10px #ff00ff, 0 0 20px #cc00cc;
+
+            .sub-text {
+                text-shadow: 0 0 5px #00ffff;
+            }
+
+            .countdown {
+                text-shadow: 0 0 10px #ff0000;
+            }
+        }
+
+        /* Extra mobile optimization */
+        @media (max-width: 480px) {
+            @keyframes colorShift {
+                0%, 100% {
+                    color: #fff;
+                    text-shadow: 0 0 3px rgba(0, 170, 255, 0.5);
+                }
+                25% {
+                    color: #ffea00;
+                    text-shadow: 0 0 3px rgba(255, 196, 0, 0.5);
+                }
+                50% {
+                    color: #00ff00;
+                    text-shadow: 0 0 3px rgba(0, 204, 0, 0.5);
+                }
+                75% {
+                    color: #ff00ff;
+                    text-shadow: 0 0 3px rgba(204, 0, 204, 0.5);
+                }
+            }
+
+            .game-over-badge {
+                text-shadow: 0 0 3px #ff0000;
+            }
+
+            .sub-text {
+                text-shadow: 0 0 3px #00ffff;
+            }
+
+            .countdown {
+                text-shadow: 0 0 8px #ff0000;
             }
         }
 
