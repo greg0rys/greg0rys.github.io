@@ -14,103 +14,191 @@
 
         body {
             font-family: 'Press Start 2P', cursive;
-            background: #0a0a0a;
-            height: 100vh;
-            overflow: hidden;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
             color: #fff;
             image-rendering: pixelated;
+            padding: 20px;
         }
 
-        .background-text {
+        /* Scanline effect */
+        body::before {
+            content: '';
             position: absolute;
-            font-size: 10vw;
-            color: rgba(255, 0, 0, 0.15);
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .background-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(138, 43, 226, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(138, 43, 226, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
             z-index: 1;
-            user-select: none;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% {
+                transform: perspective(500px) rotateX(60deg) translateY(0);
+            }
+            100% {
+                transform: perspective(500px) rotateX(60deg) translateY(50px);
+            }
         }
 
         .container {
             text-align: center;
             z-index: 10;
             position: relative;
-            width: 90%;
+            max-width: 600px;
+            width: 100%;
+            padding: 30px;
+            background: rgba(10, 10, 10, 0.7);
+            border: 3px solid #8a2be2;
+            border-radius: 10px;
+            box-shadow: 
+                0 0 20px rgba(138, 43, 226, 0.5),
+                inset 0 0 20px rgba(138, 43, 226, 0.1);
+        }
+
+        .game-over-badge {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            color: #ff6b6b;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+            margin-bottom: 30px;
+            animation: flicker 2s infinite;
+            letter-spacing: 0.1em;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+            51% { opacity: 1; }
+            52% { opacity: 0.9; }
+            53% { opacity: 1; }
         }
 
         .main-text-container {
-            margin-bottom: 2.5rem;
-            animation: pulse 3s ease-in-out infinite;
+            margin-bottom: 40px;
         }
 
         .main-text {
-            font-size: 3rem;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
             font-weight: bold;
-            color: #fff;
-            text-shadow: 0 0 10px #fff, 0 0 20px #00ffff;
-            animation: colorShift 6s ease-in-out infinite;
-            transition: all 0.3s ease;
-            line-height: 1.2;
+            background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ff00);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 8s ease infinite;
+            line-height: 1.5;
+            margin: 10px 0;
+            filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.8));
         }
         
         #mainText2 {
-             animation-delay: 3s;
+            animation-delay: 0.5s;
         }
 
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.03);
-            }
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .divider {
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                #8a2be2, 
+                transparent);
+            margin: 30px auto;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .continue-section {
+            margin-top: 30px;
         }
 
         .sub-text {
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.9);
-            animation: float 4s ease-in-out infinite;
-            animation-delay: 1s;
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            color: #00ffff;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+            text-shadow: 0 0 10px #00ffff;
         }
 
         @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .countdown-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
         }
 
         .countdown {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 6vw, 3.5rem);
             color: #ff6b6b;
-            text-shadow: 0 0 10px #ff0000;
-            margin-top: 2rem;
+            text-shadow: 0 0 20px #ff0000;
             animation: pulse 1s ease-in-out infinite;
+            min-width: 60px;
         }
 
-        /* --- UPDATED COLORSHIFT KEYFRAMES --- */
-        @keyframes colorShift {
-            0%, 100% {
-                color: #fff; /* Bright White */
-                text-shadow: 0 0 10px #fff, 0 0 20px #00aaff; /* White with a clear light blue/cyan glow */
-            }
-            25% {
-                color: #ffea00; /* Vibrant Yellow */
-                text-shadow: 0 0 10px #ffea00, 0 0 20px #ffc400; /* Yellow with an orange-yellow glow */
-            }
-            50% {
-                color: #00ff00; /* Bright Green */
-                text-shadow: 0 0 10px #00ff00, 0 0 20px #00cc00; /* Green with a darker green glow */
-            }
-            75% {
-                color: #ff00ff; /* Magenta / Bright Pink */
-                text-shadow: 0 0 10px #ff00ff, 0 0 20px #cc00cc; /* Magenta with a slightly darker magenta glow */
-            }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .continue-button {
+            background: linear-gradient(135deg, #8a2be2, #ff00ff);
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 15px 40px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: clamp(0.7rem, 2vw, 1rem);
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            text-transform: uppercase;
+        }
+
+        .continue-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(138, 43, 226, 0.6);
+            background: linear-gradient(135deg, #9d3bf7, #ff33ff);
+        }
+
+        .continue-button:active {
+            transform: translateY(-1px);
         }
 
         .particles {
@@ -125,23 +213,25 @@
 
         .particle {
             position: absolute;
-            background: rgba(255, 255, 255, 0.6);
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.8), transparent);
+            border-radius: 50%;
             animation: drift 20s linear infinite;
         }
 
         @keyframes drift {
             0% {
-                transform: translateY(100vh) translateX(0px);
+                transform: translateY(100vh) translateX(0px) scale(0);
                 opacity: 0;
             }
             10% {
                 opacity: 1;
+                transform: translateY(90vh) translateX(20px) scale(1);
             }
             90% {
                 opacity: 1;
             }
             100% {
-                transform: translateY(-10vh) translateX(100px);
+                transform: translateY(-10vh) translateX(100px) scale(0);
                 opacity: 0;
             }
         }
@@ -152,94 +242,131 @@
         }
 
         .letter:hover {
-            transform: scale(1.2);
+            transform: scale(1.2) rotate(5deg);
             color: #ffd700;
-            text-shadow: 0 0 15px #ffd700;
+            filter: drop-shadow(0 0 15px #ffd700);
+        }
+
+        .credits {
+            margin-top: 30px;
+            font-size: clamp(0.5rem, 1.5vw, 0.7rem);
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.05em;
         }
 
         @media (max-width: 768px) {
-            .background-text {
-                font-size: 15vw;
+            .container {
+                padding: 25px;
+                margin: 10px;
             }
-            .main-text {
-                font-size: 2.5rem;
-                line-height: 1.3;
+
+            .divider {
+                margin: 20px auto;
             }
-            .sub-text {
-                font-size: 1.2rem;
+
+            .continue-section {
+                margin-top: 20px;
             }
-            .countdown {
-                font-size: 2rem;
+
+            .continue-button {
+                padding: 12px 30px;
             }
         }
         
         @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px 15px;
+                border-width: 2px;
+            }
+
+            .game-over-badge {
+                margin-bottom: 20px;
+            }
+
             .main-text-container {
-                margin-bottom: 2rem;
+                margin-bottom: 30px;
             }
-            
-            .main-text {
-                font-size: 1.8rem;
-                line-height: 1.4;
+
+            .divider {
+                margin: 15px auto;
             }
-            
-            .sub-text {
-                font-size: 1rem;
+
+            .continue-button {
+                padding: 10px 25px;
+                font-size: 0.7rem;
             }
-            
-            .countdown {
-                font-size: 1.5rem;
-            }
-            
+
             @keyframes float {
-                0%, 100% {
-                    transform: translateY(0px);
-                }
-                50% {
-                    transform: translateY(-10px);
-                }
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-5px); }
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="background-text">GAME OVER</div>
-
+<div class="background-grid"></div>
 <div class="particles" id="particles"></div>
 
 <div class="container">
+    <div class="game-over-badge">⚠ GAME OVER ⚠</div>
 
     <div class="main-text-container">
         <div class="main-text" id="mainText1"></div>
         <div class="main-text" id="mainText2"></div>
     </div>
     
-    <div class="sub-text" id="subText">
+    <div class="divider"></div>
+
+    <div class="continue-section">
+        <div class="sub-text" id="subText"></div>
+        
+        <div class="countdown-container">
+            <span class="sub-text" style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 0;">⏰</span>
+            <div class="countdown" id="countdown"></div>
         </div>
-    <div class="countdown" id="countdown">
-        </div>
+
+        <button class="continue-button" onclick="handleContinue()">
+            Press to Continue
+        </button>
+    </div>
+
+    <div class="credits">INSERT COIN TO CONTINUE</div>
 </div>
 
 <script>
     function createParticles() {
         const particlesContainer = document.getElementById('particles');
-        for (let i = 0; i < 40; i++) {
+        const particleCount = window.innerWidth < 768 ? 20 : 30;
+        
+        for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
             particle.className = 'particle';
             
-            const size = Math.floor(Math.random() * 3 + 2);
+            const size = Math.floor(Math.random() * 4 + 2);
             particle.style.width = size + 'px';
             particle.style.height = size + 'px';
             
             particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-            particle.style.animationDelay = Math.random() * 20 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+            particle.style.animationDelay = Math.random() * 15 + 's';
             particlesContainer.appendChild(particle);
         }
     }
 
-    function animateText(element, text, delay = 100) {
+    function animateText(element, text, delay = 80) {
         element.innerHTML = '';
         const letters = text.split('');
 
@@ -248,11 +375,13 @@
             span.className = 'letter';
             span.textContent = letter === ' ' ? '\u00A0' : letter;
             span.style.opacity = '0';
-            span.style.transition = 'opacity 0.5s ease';
+            span.style.transform = 'translateY(20px)';
+            span.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             element.appendChild(span);
 
             setTimeout(() => {
                 span.style.opacity = '1';
+                span.style.transform = 'translateY(0)';
             }, index * delay);
         });
     }
@@ -271,25 +400,35 @@
         }, 1000);
     }
 
+    function handleContinue() {
+        alert('🎮 Continuing game...');
+        // Add your continue logic here
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
         createParticles();
 
         setTimeout(() => {
             animateText(document.getElementById('mainText1'), 'Better Luck');
-        }, 500);
+        }, 300);
 
         setTimeout(() => {
             animateText(document.getElementById('mainText2'), 'Next Time!');
-        }, 1200);
+        }, 800);
 
         setTimeout(() => {
             animateText(document.getElementById('subText'), 'Continue?');
-        }, 2200);
+        }, 1600);
         
         setTimeout(() => {
             startCountdown();
-        }, 2700);
+        }, 2000);
     });
+
+    // Optimize for mobile
+    if ('ontouchstart' in window) {
+        document.body.style.cursor = 'pointer';
+    }
 </script>
 
 </body>
