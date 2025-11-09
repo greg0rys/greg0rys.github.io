@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Over</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Use the pixel font for everything */
+            font-family: 'Press Start 2P', cursive;
+            /* A simple, dark background fits the retro theme */
+            background: #0a0a0a;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: #fff;
+            image-rendering: pixelated; /* Ensures pixel art isn't blurry */
+        }
+
+        /* The faded "GAME OVER" text in the background */
+        .background-text {
+            position: absolute;
+            font-size: 10vw;
+            color: rgba(255, 0, 0, 0.15); /* Faded red */
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
+            z-index: 1;
+            user-select: none; /* Can't be selected */
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            position: relative;
+        }
+
+        /* "Better Luck Next Time!" */
+        .main-text {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 10px #fff, 0 0 20px #00ffff;
+            margin-bottom: 2rem;
+            /* Use the colorShift animation to make it "flash" */
+            animation: colorShift 6s ease-in-out infinite, 
+                       pulse 3s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03);
+            }
+        }
+
+        /* "Continue?" */
+        .sub-text {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            /* Use the float animation from your original code */
+            animation: float 4s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* The countdown timer */
+        .countdown {
+            font-size: 2.5rem;
+            color: #ff6b6b; /* Red for urgency */
+            text-shadow: 0 0 10px #ff0000;
+            margin-top: 2rem;
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        /* Flashing color animation for the main text */
+        @keyframes colorShift {
+            0%, 100% {
+                color: #fff;
+                text-shadow: 0 0 10px #fff, 0 0 20px #00ffff;
+            }
+            25% {
+                color: #ff6b6b;
+                text-shadow: 0 0 10px #ff6b6b, 0 0 20px #ff0000;
+            }
+            50% {
+                color: #4ecdc4;
+                text-shadow: 0 0 10px #4ecdc4, 0 0 20px #00ff00;
+            }
+            75% {
+                color: #ffd700;
+                text-shadow: 0 0 10px #ffd700, 0 0 20px #ffff00;
+            }
+        }
+
+        /* The background particles, now restyled as pixels */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .particle {
+            position: absolute;
+            /* Make them squares, not circles */
+            background: rgba(255, 255, 255, 0.6);
+            /* Removed border-radius */
+            animation: drift 20s linear infinite;
+        }
+
+        /* Use the drift animation from your original code */
+        @keyframes drift {
+            0% {
+                transform: translateY(100vh) translateX(0px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* Individual letter hover effect, restyled for retro theme */
+        .letter {
+            display: inline-block;
+            transition: all 0.2s ease;
+        }
+
+        .letter:hover {
+            /* A classic yellow "selected" color */
+            transform: scale(1.2);
+            color: #ffd700;
+            text-shadow: 0 0 15px #ffd700;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .background-text {
+                font-size: 15vw;
+            }
+            .main-text {
+                font-size: 2rem;
+            }
+            .sub-text {
+                font-size: 1rem;
+            }
+            .countdown {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-text {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="background-text">GAME OVER</div>
+
+<div class="particles" id="particles"></div>
+
+<div class="container">
+    <div class="main-text" id="mainText">
+        </div>
+    <div class="sub-text" id="subText">
+        </div>
+    <div class="countdown" id="countdown">
+        </div>
+</div>
+
+<script>
+    // Create particles (Modified to be squares)
+    function createParticles() {
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 40; i++) { // Slightly fewer particles
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            // Random square size for a pixel-dust effect
+            const size = Math.floor(Math.random() * 3 + 2); // 2px to 4px
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particle.style.animationDelay = Math.random() * 20 + 's';
+            particlesContainer.appendChild(particle);
+        }
+    }
+
+    // Animate text letter by letter (From your original code)
+    function animateText(element, text, delay = 100) {
+        element.innerHTML = '';
+        const letters = text.split('');
+
+        letters.forEach((letter, index) => {
+            const span = document.createElement('span');
+            span.className = 'letter';
+            // Use non-breaking space for spaces
+            span.textContent = letter === ' ' ? '\u00A0' : letter;
+            
+            // Simple fade-in, as the pixel font doesn't animate well
+            span.style.opacity = '0';
+            span.style.transition = 'opacity 0.5s ease';
+
+            element.appendChild(span);
+
+            setTimeout(() => {
+                span.style.opacity = '1';
+            }, index * delay);
+        });
+    }
+
+    // Start the countdown timer
+    function startCountdown() {
+        const countdownElement = document.getElementById('countdown');
+        let timer = 9;
+        countdownElement.textContent = timer;
+
+        setInterval(() => {
+            timer--;
+            if (timer < 0) {
+                timer = 9; // Loop the countdown
+            }
+            countdownElement.textContent = timer;
+        }, 1000);
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+        createParticles();
+
+        // Animate the new text
+        setTimeout(() => {
+            animateText(document.getElementById('mainText'), 'Better Luck Next Time!');
+        }, 500);
+
+        setTimeout(() => {
+            animateText(document.getElementById('subText'), 'Continue?');
+        }, 2000);
+        
+        setTimeout(() => {
+            startCountdown();
+        }, 2500); // Start countdown after "Continue?" appears
+    });
+    
+    // NOTE: Removed click-effect and mouse-trail from your 
+    // original JS to better fit the simple retro theme.
+</script>
+
+</body>
+</html>
