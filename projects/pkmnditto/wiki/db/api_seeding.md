@@ -11,9 +11,9 @@ The purpose of these scripts is to seed the database with all data from the poke
 # Resources ![Mr.Mime](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/122.png)
 
 ### Scripts ![Porygon](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/137.png)
-- [`./script/populate_app_data.rb`](“./script/populate_app_data.rb")
+- [`./script/populate_app_data.rb`](./script/populate_app_data.rb)
 
-- [`./script/destroy_db_tables.rb`](“./script/destroy_db_tables.rb")
+- [`./script/destroy_db_tables.rb`](./script/destroy_db_tables.rb)
 
 
 ### Endpoints
@@ -31,4 +31,6 @@ The purpose of these scripts is to seed the database with all data from the poke
 
 # Running the migration 
 
-```bash rails runner script/populate_app_data.rb ```
+```bash 
+rails runner script/populate_app_data.rb 
+```
