@@ -4,8 +4,9 @@ title: Home
 permalink: /
 ---
 
-pkmnditto 
-
-```ruby copy
-HTTParty.get() 
-```
+tanga 
+{% highlight ruby linenos %}
+def hello_world
+  puts "Hello, World!"
+end
+{% endhighlight %}
