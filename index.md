@@ -1,10 +1,7 @@
 ---
-
-layout: default
-title: Home
+layout: page
+title: Pokemon Ditto
 permalink: /
-
 ---
 
-
-eat my oussyn 
+welcome :) 
