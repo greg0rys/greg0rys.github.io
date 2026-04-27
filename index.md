@@ -8,6 +8,9 @@ permalink: /
  
 {% highlight ruby linenos %}
 def get_pokemon(name: nil)
-  puts "Hello, World!"
+  return nil it name.nil?
+  pkmn = HTTparty.get("#{name}")
+  return nil if pkmn.blank? 
+  return pkmn["results"]["name"]
 end
 {% endhighlight %}
