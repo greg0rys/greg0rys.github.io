@@ -1,3 +1,9 @@
+---
+layout: page
+title: Projects
+permalink: /projects
+---
+
 <h2>Project Wiki</h2>
 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png" alt="Tangela" style="margin: 0; padding: 0; display: inline-block; vertical-align: middle;">
 
