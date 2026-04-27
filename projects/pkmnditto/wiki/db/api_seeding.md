@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Pokemon Ditto
+title: DB API Seeding
 permalink: projects/pkmnditto/wiki/db
 ---
 
