@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: home
 title: Pokemon Ditto
 permalink: /
 ---
