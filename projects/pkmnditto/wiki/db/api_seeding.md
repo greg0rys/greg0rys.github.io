@@ -17,7 +17,7 @@ The purpose of these scripts is to seed the database with all data from the poke
 
 
 ### Endpoints
-` https://pokeapi.co/api/v2/ `
+ https://pokeapi.co/api/v2/
   * ` /pokemon `
   * ` /move `
   * ` /type `
