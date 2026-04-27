@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: DB API Seeding
 permalink: projects/pkmnditto/wiki/db
 ---
