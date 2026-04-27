@@ -1,8 +1,9 @@
 ---
 layout: default
-title: DB seeding API data
-permalink: /projects/pkmnditto/wiki/
+title: Pokemon Ditto
+permalink: /projects/pkmnditto/wiki/api-seed.md
 ---
+
 
 # overview 
 
