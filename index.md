@@ -6,4 +6,6 @@ permalink: /
 
 welcome :) 
 
-```ruby copy HTTParty.get() ```
+```ruby copy
+HTTParty.get() 
+```
