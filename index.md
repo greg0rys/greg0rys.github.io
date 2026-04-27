@@ -4,7 +4,7 @@ title: Home
 permalink: /
 ---
 
-welcome :) 
+pkmnditto 
 
 ```ruby copy
 HTTParty.get() 
