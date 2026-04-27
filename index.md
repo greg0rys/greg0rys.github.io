@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Pokemon Ditto
+title: Home
 permalink: /
 ---
 
