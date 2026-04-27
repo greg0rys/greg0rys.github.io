@@ -1,7 +1,7 @@
 ---
 layout: post
 title: DB API Seeding
-permalink: projects/pkmnditto/wiki/db
+permalink: projects/pkmnditto/wiki/db/db-seeding
 ---
 
 # Overview ![Gloom](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/44.png)
