@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Pkmn Ditto
-permalink /projects/pkmnditto/
+permalink: /projects/pkmnditto/
 ---
 
 say hi!
