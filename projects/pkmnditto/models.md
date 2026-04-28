@@ -23,7 +23,7 @@ helper-path: ./app/helpers/pokemon_helper.rb
     type: Array,
     base_exp: Integer,
     default_sprite: String,
-    short_text: String,
+    short_text: String
 }
 ```
 
@@ -44,7 +44,7 @@ helper-path: ./app/helpers/pokemon_helper.rb
 ```ruby
 {
     name: String,
-    url: String,
+    url: String
 }
 ```
 
