@@ -12,7 +12,7 @@ model-path: ./app/models/pokemon.rb
 helper-path: ./app/helpers/pokemon_helper.rb
 ```
 
-fields
+### fields
 
 ```ruby
 {
@@ -24,7 +24,7 @@ fields
 }
 ```
 
-relations
+### relations
 
 ```ruby
     has_many :types
@@ -32,9 +32,9 @@ relations
     has_many :damage_relations
 ```
 
-### Move
+# Move
 
-### Type
+# Type
 
-### Damage Relation 
+# Damage Relation 
 
