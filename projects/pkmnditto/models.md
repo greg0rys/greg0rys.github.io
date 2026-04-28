@@ -4,10 +4,8 @@ title: DB Models
 permalink: /projects/models
 ---
 
-# Models
-
-### Pokemon 
-
+# Pokemon 
+### paths
 ```bash
 model-path: ./app/models/pokemon.rb
 
