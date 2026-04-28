@@ -16,6 +16,11 @@ fields
 
 relations
 
+{% highlight ruby linenos %}
+has_many: :types
+has_many: moves
+{% endhighlight %}
+
 
 ### Move
 
