@@ -9,6 +9,7 @@ permalink: /projects/models
 ### Pokemon 
 source: ```bash
 ./app/models/pokemon.rb
+```
 fields
 relations
 
