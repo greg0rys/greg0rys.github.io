@@ -9,7 +9,9 @@ permalink: /projects/models
 ### Pokemon 
 
 ```bash
-./app/models/pokemon.rb
+model-path: ./app/models/pokemon.rb
+
+helper-path: ./app/helpers/pokemon_helper.rb
 ```
 
 fields
