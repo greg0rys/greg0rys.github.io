@@ -18,12 +18,12 @@ helper-path: ./app/helpers/pokemon_helper.rb
 
 ```ruby
 {
-    poke_id: Integer
-    name: String
-    type: Array
-    base_exp: Integer
-    default_sprite: String
-    short_text: String
+    poke_id: Integer,
+    name: String,
+    type: Array,
+    base_exp: Integer,
+    default_sprite: String,
+    short_text: String,
 }
 ```
 
@@ -42,8 +42,8 @@ helper-path: ./app/helpers/pokemon_helper.rb
 ### fields
 ```ruby
 {
-    name: String
-    url: String
+    name: String,
+    url: String,
 }
 
 # Damage Relation 
