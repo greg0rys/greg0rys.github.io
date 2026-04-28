@@ -6,7 +6,7 @@ permalink: /projects/pkmnditto/models
 
 {% include wynaut.html %}
 
-# Pokemon 
+# Pokemon {% include wynaut.html %}
 ### paths
 ```bash
 model-path: ./app/models/pokemon.rb
