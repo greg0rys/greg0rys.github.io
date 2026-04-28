@@ -20,6 +20,7 @@ helper-path: ./app/helpers/pokemon_helper.rb
 {
     poke_id: integer,
     name: string,
+    type: Array,
     base_exp: integer,
     default_sprite: string,
     short_text: string
