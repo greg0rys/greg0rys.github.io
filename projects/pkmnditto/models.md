@@ -1,7 +1,7 @@
 ---
 layout: post
 title: DB Models
-permalink: /projects/models
+permalink: /projects/pkmnditto/models
 ---
 
 # Pokemon 
