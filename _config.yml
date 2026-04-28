@@ -8,3 +8,5 @@ plugins:
 collections:
   projects:
     output: true
+
+wynaut_sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/360.png"
