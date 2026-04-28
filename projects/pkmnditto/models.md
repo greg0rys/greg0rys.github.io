@@ -45,6 +45,7 @@ helper-path: ./app/helpers/pokemon_helper.rb
     name: String,
     url: String,
 }
+```
 
 # Damage Relation 
 
