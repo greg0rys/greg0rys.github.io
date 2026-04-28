@@ -18,12 +18,12 @@ helper-path: ./app/helpers/pokemon_helper.rb
 
 ```ruby
 {
-    poke_id: integer,
-    name: string,
-    type: Array,
-    base_exp: integer,
-    default_sprite: string,
-    short_text: string
+    poke_id: Integer
+    name: String
+    type: Array
+    base_exp: Integer
+    default_sprite: String
+    short_text: String
 }
 ```
 
@@ -42,7 +42,7 @@ helper-path: ./app/helpers/pokemon_helper.rb
 ### fields
 ```ruby
 {
-    name: String, 
+    name: String
     url: String
 }
 
