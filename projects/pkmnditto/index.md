@@ -8,7 +8,7 @@ permalink: /projects/pkmnditto
 
 <ul>
   {% for p in site.pages %}
-    {% if p.path contains "pkmnditto/" %}
+    {% if p.path contains "pkmnditto/" and p.url != page.url %}
       <li>
         <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
       </li>
