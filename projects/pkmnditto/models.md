@@ -61,3 +61,4 @@ helper-path: ./app/helpers/pokemon_helper.rb
     no_damage_to: Array,
     no_damage_from: Array
 }
+```
