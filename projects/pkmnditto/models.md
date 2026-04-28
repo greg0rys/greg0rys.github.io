@@ -40,6 +40,7 @@ helper-path: ./app/helpers/pokemon_helper.rb
 # Type
 
 ### fields
+
 ```ruby
 {
     name: String,
