@@ -50,3 +50,14 @@ helper-path: ./app/helpers/pokemon_helper.rb
 
 # Damage Relation 
 
+### fields
+
+```ruby
+{
+    double_damage_to: Array,
+    double_damage_from: Array,
+    half_damage_to: Array,
+    half_damage_from: Array,
+    no_damage_to: Array,
+    no_damage_from: Array
+}
