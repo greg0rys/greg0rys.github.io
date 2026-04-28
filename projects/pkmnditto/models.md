@@ -21,6 +21,11 @@ has_many :types
 has_many :moves
 {% endhighlight %}
 
+```ruby
+def hi? 
+    return true
+end
+```
 
 ### Move
 
