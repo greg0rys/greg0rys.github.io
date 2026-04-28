@@ -23,7 +23,10 @@ has_many :moves
 
 ```ruby
 def hi? 
-    return true
+    return {
+        name: 1.zero?
+        
+    }
 end
 ```
 
