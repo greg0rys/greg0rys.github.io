@@ -4,6 +4,8 @@ title: DB Models
 permalink: /projects/pkmnditto/models
 ---
 
+{% include wynaut.html %}
+
 # Pokemon 
 ### paths
 ```bash
