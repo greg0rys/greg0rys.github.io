@@ -16,18 +16,14 @@ fields
 
 relations
 
-{% highlight ruby linenos %}
-has_many :types
-has_many :moves
-{% endhighlight %}
-
 ```ruby
-def hi? 
-    return {
-        name: 1.zero?
-        
-    }
-end
+{
+    poke_id: integer,
+    name: string,
+    base_exp: integer,
+    default_sprite: string,
+    short_text: string
+}
 ```
 
 ### Move
