@@ -11,7 +11,6 @@ permalink: /projects/models
 ```bash
 ./app/models/pokemon.rb
 ```
-
 </span>
 
 fields
