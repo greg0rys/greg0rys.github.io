@@ -54,6 +54,7 @@ helper-path: ./app/helpers/pokemon_helper.rb
 
 ```ruby
 {
+    pkmn_type: String,
     double_damage_to: Array,
     double_damage_from: Array,
     half_damage_to: Array,
