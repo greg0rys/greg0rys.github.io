@@ -39,13 +39,13 @@ helper-path: ./app/helpers/pokemon_helper.rb
 ### fields
 ```ruby
 {
-    id: (integer, primary key),
-    created_at: (datetime, not null),
-    updated_at: (datetime, not null),
-    move_type: (string),
-    name: (string),
-    power: (integer),
-    short_text: (string)
+    id: Integer,
+    created_at: DateTime, NotNull,
+    updated_at: DateTime, NotNull,
+    move_type: String,
+    name: String,
+    power: Integer,
+    short_text: String
 }
 ```
 
