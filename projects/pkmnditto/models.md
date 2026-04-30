@@ -8,6 +8,7 @@ permalink: /projects/pkmnditto/models
 
 # Pokemon 
 ### paths
+
 ```bash
 model-path: ./app/models/pokemon.rb
 
@@ -36,6 +37,15 @@ helper-path: ./app/helpers/pokemon_helper.rb
 ```
 
 # Move
+
+### paths
+
+```bash
+model-path: ./app/models/move.rb
+
+helper-path: ./app/helpers/moves_helper.rb
+```
+
 ### fields
 ```ruby
 {
