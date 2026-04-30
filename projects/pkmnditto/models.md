@@ -40,8 +40,8 @@ helper-path: ./app/helpers/pokemon_helper.rb
 ```ruby
 {
     id: Integer,
-    created_at: DateTime, NotNull,
-    updated_at: DateTime, NotNull,
+    created_at: DateTime NotNull,
+    updated_at: DateTime NotNull,
     move_type: String,
     name: String,
     power: Integer,
