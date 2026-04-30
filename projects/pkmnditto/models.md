@@ -61,6 +61,14 @@ helper-path: ./app/helpers/moves_helper.rb
 
 # Type
 
+### paths 
+
+```bash
+model-path: ./app/models/type.rb
+
+helper-path: ./app/helpers/types_helper.rb
+```
+
 ### fields
 
 ```ruby
@@ -72,6 +80,13 @@ helper-path: ./app/helpers/moves_helper.rb
 
 # Damage Relation 
 
+### paths
+
+```bash
+model-path: ./app/models/damage_relation.rb
+
+helper-path: ./app/helpers/damage_relation_helper.rb
+```
 ### fields
 
 ```ruby
