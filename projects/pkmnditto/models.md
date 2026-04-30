@@ -36,6 +36,18 @@ helper-path: ./app/helpers/pokemon_helper.rb
 ```
 
 # Move
+### fields
+```ruby
+{
+    id: (integer, primary key),
+    created_at: (datetime, not null),
+    updated_at: (datetime, not null),
+    move_type: (string),
+    name: (string),
+    power: (integer),
+    short_text: (string)
+}
+```
 
 # Type
 
