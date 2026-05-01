@@ -55,7 +55,8 @@ helper-path: ./app/helpers/moves_helper.rb
     move_type: String,
     name: String,
     power: Integer,
-    short_text: String
+    short_text: String,
+    type_id: TypeForiegnKey Integer
 }
 ```
 
@@ -67,6 +68,12 @@ helper-path: ./app/helpers/moves_helper.rb
 model-path: ./app/models/type.rb
 
 helper-path: ./app/helpers/types_helper.rb
+```
+
+### relationships 
+```ruby 
+has_many :moves, source: moves 
+Type.moves
 ```
 
 ### fields
