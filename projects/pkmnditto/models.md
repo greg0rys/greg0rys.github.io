@@ -71,9 +71,13 @@ helper-path: ./app/helpers/types_helper.rb
 ```
 
 ### relationships 
+__*j*__
 ```ruby 
-has_many :moves, source: moves 
-Type.moves
+has_many :moves, source: :moves 
+Type.moves 
+
+# associate a move with a type 
+Type.first.moves << Move.first
 ```
 
 ### fields
