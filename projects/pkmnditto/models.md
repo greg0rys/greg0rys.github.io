@@ -71,7 +71,7 @@ helper-path: ./app/helpers/types_helper.rb
 ```
 
 ### relationships 
-__*j*__
+__*type_id links these models*__
 ```ruby 
 has_many :moves, source: :moves 
 Type.moves 
